@@ -405,11 +405,11 @@ export const OnboardingFlow = {
       },
       {
         title: 'Done',
-        description: 'You're all set!',
+        description: "You're all set!",
         content: (
           <div style={{ textAlign: 'center', padding: '2rem' }}>
             <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎉</div>
-            <h2>You're All Set!</h2>
+            <h2>You&apos;re All Set!</h2>
             <p style={{ color: 'var(--content-secondary)', marginTop: '1rem' }}>
               Start exploring our platform and discover all the features.
             </p>
