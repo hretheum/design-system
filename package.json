@@ -2,7 +2,7 @@
   "name": "design-system",
   "version": "1.0.0",
   "description": "Enterprise-grade design system with WCAG 2.1 AA/AAA compliance",
-  "main": "index.js",
+  "main": "dist/js/tokens.js",
   "scripts": {
     "test": "npm run test:contrast && npm run test:a11y",
     "test:contrast": "node scripts/contrast-checker.js",
