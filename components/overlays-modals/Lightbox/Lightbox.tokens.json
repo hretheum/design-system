@@ -1,0 +1,32 @@
+{
+  "lightbox": {
+    "size": {
+      "sm": {
+        "padding": { "value": "{spacing.2}", "type": "dimension" },
+        "fontSize": { "value": "{fontSize.sm}", "type": "dimension" }
+      },
+      "md": {
+        "padding": { "value": "{spacing.3}", "type": "dimension" },
+        "fontSize": { "value": "{fontSize.base}", "type": "dimension" }
+      },
+      "lg": {
+        "padding": { "value": "{spacing.4}", "type": "dimension" },
+        "fontSize": { "value": "{fontSize.lg}", "type": "dimension" }
+      }
+    },
+    "variant": {
+      "default": {
+        "background": { "value": "{color.gray.100}", "type": "color" },
+        "color": { "value": "{color.gray.900}", "type": "color" }
+      },
+      "primary": {
+        "background": { "value": "{brand.primary}", "type": "color" },
+        "color": { "value": "{color.white}", "type": "color" }
+      },
+      "secondary": {
+        "background": { "value": "{brand.secondary}", "type": "color" },
+        "color": { "value": "{color.white}", "type": "color" }
+      }
+    }
+  }
+}

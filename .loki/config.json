@@ -1,0 +1,35 @@
+{
+  "configurations": {
+    "chrome": {
+      "target": "chrome.app",
+      "width": 1024,
+      "height": 768,
+      "deviceScaleFactor": 1
+    },
+    "chrome.mobile": {
+      "target": "chrome.app",
+      "width": 375,
+      "height": 667,
+      "deviceScaleFactor": 2,
+      "mobile": true
+    },
+    "firefox": {
+      "target": "firefox.app",
+      "width": 1024,
+      "height": 768
+    }
+  },
+  "chromeDockerImage": "yukinying/chrome-headless-browser:latest",
+  "firefoxDockerImage": "yukinying/firefox-headless-browser:latest",
+  "storybookPort": 6006,
+  "skipStories": [
+    "Template.*",
+    "Interactive.*",
+    ".*WithState.*"
+  ],
+  "failureThreshold": 0.001,
+  "failureThresholdType": "percent",
+  "diffingEngine": "pixelmatch",
+  "verboseRenderer": false,
+  "reactUri": "file:./storybook-static"
+}

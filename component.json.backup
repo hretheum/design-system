@@ -501,7 +501,7 @@
       "content": {
         "flex": {
           "value": "1",
-          "type": "other"
+          "type": "string"
         },
         "padding": {
           "value": "{spacing.8}",
@@ -1195,20 +1195,48 @@
   "sidebar": {
     "width": {
       "collapsed": {
-        "value": "{size.16}",
+        "value": "64px",
         "type": "dimension"
       },
-      "compact": {
-        "value": "{size.48}",
-        "type": "dimension"
-      },
-      "default": {
-        "value": "{size.64}",
+      "expanded": {
+        "value": "240px",
         "type": "dimension"
       },
       "wide": {
         "value": "320px",
         "type": "dimension"
+      }
+    },
+    "item": {
+      "padding": {
+        "x": {
+          "value": "{spacing.4}",
+          "type": "dimension"
+        },
+        "y": {
+          "value": "{spacing.2}",
+          "type": "dimension"
+        }
+      },
+      "indent": {
+        "value": "{spacing.6}",
+        "type": "dimension"
+      },
+      "iconGap": {
+        "value": "{spacing.3}",
+        "type": "dimension"
+      }
+    },
+    "group": {
+      "headerPadding": {
+        "x": {
+          "value": "{spacing.4}",
+          "type": "dimension"
+        },
+        "y": {
+          "value": "{spacing.3}",
+          "type": "dimension"
+        }
       }
     }
   },
@@ -1248,29 +1276,29 @@
     "button": {
       "minHeight": {
         "mobile": {
-          "value": "{accessibility.targetSize.minimum.mobile}",
+          "value": "{accessible.targetSize.minimum.mobile}",
           "type": "dimension",
           "description": "WCAG compliant mobile touch target"
         },
         "desktop": {
-          "value": "{accessibility.targetSize.minimum.desktop}",
+          "value": "{accessible.targetSize.minimum.desktop}",
           "type": "dimension",
           "description": "WCAG compliant desktop target"
         }
       },
       "minWidth": {
         "mobile": {
-          "value": "{accessibility.targetSize.minimum.mobile}",
+          "value": "{accessible.targetSize.minimum.mobile}",
           "type": "dimension"
         },
         "desktop": {
-          "value": "{accessibility.targetSize.minimum.desktop}",
+          "value": "{accessible.targetSize.minimum.desktop}",
           "type": "dimension"
         }
       },
       "spacing": {
         "between": {
-          "value": "{accessibility.targetSize.minimum.mobile}",
+          "value": "{accessible.targetSize.minimum.mobile}",
           "type": "dimension",
           "description": "Minimum space between buttons"
         }
@@ -1279,7 +1307,7 @@
     "input": {
       "minHeight": {
         "mobile": {
-          "value": "{accessibility.targetSize.minimum.mobile}",
+          "value": "{accessible.targetSize.minimum.mobile}",
           "type": "dimension"
         },
         "desktop": {
@@ -1299,7 +1327,7 @@
     "link": {
       "underline": {
         "default": {
-          "value": "{accessibility.link.underline.thickness}",
+          "value": "{accessible.link.underline.thickness}",
           "type": "dimension"
         },
         "hover": {
@@ -1343,7 +1371,7 @@
     },
     "switch": {
       "minWidth": {
-        "value": "{accessibility.targetSize.minimum.desktop}",
+        "value": "{accessible.targetSize.minimum.desktop}",
         "type": "dimension"
       },
       "minHeight": {
@@ -1354,7 +1382,7 @@
     "icon": {
       "minSize": {
         "clickable": {
-          "value": "{accessibility.targetSize.minimum.desktop}",
+          "value": "{accessible.targetSize.minimum.desktop}",
           "type": "dimension",
           "description": "Minimum for interactive icons"
         },
@@ -1369,12 +1397,12 @@
       "focus": {
         "trap": {
           "value": "true",
-          "type": "other",
+          "type": "string",
           "description": "Must trap focus for a11y"
         },
         "returnTo": {
           "value": "trigger",
-          "type": "other",
+          "type": "string",
           "description": "Return focus to trigger on close"
         }
       }
@@ -1382,16 +1410,16 @@
     "skipLink": {
       "position": {
         "hidden": {
-          "value": "{accessibility.skipLink.position.hidden}",
-          "type": "other"
+          "value": "-9999px",
+          "type": "string"
         },
         "visible": {
-          "value": "{accessibility.skipLink.position.visible}",
-          "type": "other"
+          "value": "0",
+          "type": "string"
         }
       },
       "zIndex": {
-        "value": "{accessibility.skipLink.zIndex}",
+        "value": "9999",
         "type": "number"
       }
     },
@@ -1416,6 +1444,736 @@
           "value": "{spacing.1}",
           "type": "dimension"
         }
+      }
+    }
+  },
+  "link": {
+    "size": {
+      "sm": {
+        "fontSize": {
+          "value": "{fontSize.sm}",
+          "type": "dimension"
+        },
+        "padding": {
+          "value": "{spacing.1}",
+          "type": "dimension"
+        }
+      },
+      "md": {
+        "fontSize": {
+          "value": "{fontSize.base}",
+          "type": "dimension"
+        },
+        "padding": {
+          "value": "{spacing.2}",
+          "type": "dimension"
+        }
+      },
+      "lg": {
+        "fontSize": {
+          "value": "{fontSize.lg}",
+          "type": "dimension"
+        },
+        "padding": {
+          "value": "{spacing.3}",
+          "type": "dimension"
+        }
+      }
+    },
+    "underline": {
+      "thickness": {
+        "value": "1px",
+        "type": "dimension"
+      },
+      "offset": {
+        "value": "2px",
+        "type": "dimension"
+      }
+    }
+  },
+  "iconButton": {
+    "size": {
+      "xs": {
+        "width": {
+          "value": "24px",
+          "type": "dimension"
+        },
+        "height": {
+          "value": "24px",
+          "type": "dimension"
+        },
+        "iconSize": {
+          "value": "12px",
+          "type": "dimension"
+        }
+      },
+      "sm": {
+        "width": {
+          "value": "32px",
+          "type": "dimension"
+        },
+        "height": {
+          "value": "32px",
+          "type": "dimension"
+        },
+        "iconSize": {
+          "value": "16px",
+          "type": "dimension"
+        }
+      },
+      "md": {
+        "width": {
+          "value": "40px",
+          "type": "dimension"
+        },
+        "height": {
+          "value": "40px",
+          "type": "dimension"
+        },
+        "iconSize": {
+          "value": "20px",
+          "type": "dimension"
+        }
+      },
+      "lg": {
+        "width": {
+          "value": "48px",
+          "type": "dimension"
+        },
+        "height": {
+          "value": "48px",
+          "type": "dimension"
+        },
+        "iconSize": {
+          "value": "24px",
+          "type": "dimension"
+        }
+      }
+    }
+  },
+  "splitButton": {
+    "divider": {
+      "width": {
+        "value": "1px",
+        "type": "dimension"
+      },
+      "margin": {
+        "value": "0",
+        "type": "dimension"
+      }
+    },
+    "dropdown": {
+      "minWidth": {
+        "value": "32px",
+        "type": "dimension"
+      },
+      "iconSize": {
+        "value": "16px",
+        "type": "dimension"
+      }
+    }
+  },
+  "buttonGroup": {
+    "gap": {
+      "none": {
+        "value": "0",
+        "type": "dimension"
+      },
+      "sm": {
+        "value": "{spacing.1}",
+        "type": "dimension"
+      },
+      "md": {
+        "value": "{spacing.2}",
+        "type": "dimension"
+      },
+      "lg": {
+        "value": "{spacing.3}",
+        "type": "dimension"
+      }
+    },
+    "divider": {
+      "width": {
+        "value": "1px",
+        "type": "dimension"
+      }
+    }
+  },
+  "actionMenu": {
+    "trigger": {
+      "padding": {
+        "x": {
+          "value": "{spacing.4}",
+          "type": "dimension"
+        },
+        "y": {
+          "value": "{spacing.2}",
+          "type": "dimension"
+        }
+      }
+    },
+    "dropdown": {
+      "minWidth": {
+        "value": "200px",
+        "type": "dimension"
+      },
+      "maxHeight": {
+        "value": "300px",
+        "type": "dimension"
+      },
+      "padding": {
+        "value": "{spacing.2}",
+        "type": "dimension"
+      }
+    },
+    "item": {
+      "padding": {
+        "x": {
+          "value": "{spacing.3}",
+          "type": "dimension"
+        },
+        "y": {
+          "value": "{spacing.2}",
+          "type": "dimension"
+        }
+      },
+      "minHeight": {
+        "value": "32px",
+        "type": "dimension"
+      }
+    }
+  },
+  "fileUpload": {
+    "dropzone": {
+      "minHeight": {
+        "value": "120px",
+        "type": "dimension"
+      },
+      "padding": {
+        "value": "{spacing.6}",
+        "type": "dimension"
+      },
+      "borderWidth": {
+        "value": "2px",
+        "type": "dimension"
+      },
+      "borderStyle": {
+        "value": "dashed",
+        "type": "string"
+      }
+    },
+    "preview": {
+      "size": {
+        "value": "80px",
+        "type": "dimension"
+      },
+      "gap": {
+        "value": "{spacing.3}",
+        "type": "dimension"
+      }
+    },
+    "progress": {
+      "height": {
+        "value": "4px",
+        "type": "dimension"
+      }
+    }
+  },
+  "slider": {
+    "track": {
+      "height": {
+        "value": "4px",
+        "type": "dimension"
+      },
+      "borderRadius": {
+        "value": "2px",
+        "type": "dimension"
+      }
+    },
+    "thumb": {
+      "size": {
+        "value": "20px",
+        "type": "dimension"
+      },
+      "borderWidth": {
+        "value": "2px",
+        "type": "dimension"
+      }
+    },
+    "mark": {
+      "size": {
+        "value": "8px",
+        "type": "dimension"
+      }
+    },
+    "label": {
+      "offset": {
+        "value": "{spacing.6}",
+        "type": "dimension"
+      },
+      "fontSize": {
+        "value": "{fontSize.sm}",
+        "type": "dimension"
+      }
+    }
+  },
+  "colorPicker": {
+    "swatch": {
+      "size": {
+        "sm": {
+          "value": "24px",
+          "type": "dimension"
+        },
+        "md": {
+          "value": "32px",
+          "type": "dimension"
+        },
+        "lg": {
+          "value": "40px",
+          "type": "dimension"
+        }
+      },
+      "borderWidth": {
+        "value": "2px",
+        "type": "dimension"
+      }
+    },
+    "input": {
+      "width": {
+        "value": "120px",
+        "type": "dimension"
+      }
+    },
+    "palette": {
+      "columns": {
+        "value": "8",
+        "type": "number"
+      },
+      "gap": {
+        "value": "{spacing.1}",
+        "type": "dimension"
+      }
+    }
+  },
+  "searchInput": {
+    "icon": {
+      "size": {
+        "value": "20px",
+        "type": "dimension"
+      },
+      "offset": {
+        "value": "{spacing.3}",
+        "type": "dimension"
+      }
+    },
+    "clear": {
+      "size": {
+        "value": "16px",
+        "type": "dimension"
+      },
+      "offset": {
+        "value": "{spacing.3}",
+        "type": "dimension"
+      }
+    },
+    "suggestions": {
+      "maxHeight": {
+        "value": "300px",
+        "type": "dimension"
+      },
+      "itemPadding": {
+        "x": {
+          "value": "{spacing.3}",
+          "type": "dimension"
+        },
+        "y": {
+          "value": "{spacing.2}",
+          "type": "dimension"
+        }
+      }
+    }
+  },
+  "numberInput": {
+    "stepper": {
+      "width": {
+        "value": "32px",
+        "type": "dimension"
+      },
+      "iconSize": {
+        "value": "12px",
+        "type": "dimension"
+      }
+    },
+    "input": {
+      "minWidth": {
+        "value": "80px",
+        "type": "dimension"
+      },
+      "textAlign": {
+        "value": "right",
+        "type": "string"
+      }
+    }
+  },
+  "pinInput": {
+    "field": {
+      "width": {
+        "value": "48px",
+        "type": "dimension"
+      },
+      "height": {
+        "value": "48px",
+        "type": "dimension"
+      },
+      "fontSize": {
+        "value": "{fontSize.xl}",
+        "type": "dimension"
+      },
+      "textAlign": {
+        "value": "center",
+        "type": "string"
+      }
+    },
+    "gap": {
+      "value": "{spacing.2}",
+      "type": "dimension"
+    }
+  },
+  "form": {
+    "field": {
+      "gap": {
+        "value": "{spacing.2}",
+        "type": "dimension"
+      },
+      "marginBottom": {
+        "value": "{spacing.4}",
+        "type": "dimension"
+      }
+    },
+    "label": {
+      "fontSize": {
+        "value": "{fontSize.sm}",
+        "type": "dimension"
+      },
+      "fontWeight": {
+        "value": "{fontWeight.medium}",
+        "type": "number"
+      }
+    },
+    "helper": {
+      "fontSize": {
+        "value": "{fontSize.xs}",
+        "type": "dimension"
+      },
+      "marginTop": {
+        "value": "{spacing.1}",
+        "type": "dimension"
+      }
+    },
+    "error": {
+      "fontSize": {
+        "value": "{fontSize.xs}",
+        "type": "dimension"
+      },
+      "marginTop": {
+        "value": "{spacing.1}",
+        "type": "dimension"
+      }
+    },
+    "section": {
+      "gap": {
+        "value": "{spacing.6}",
+        "type": "dimension"
+      },
+      "padding": {
+        "value": "{spacing.4}",
+        "type": "dimension"
+      }
+    }
+  },
+  "navigationBar": {
+    "height": {
+      "value": "64px",
+      "type": "dimension"
+    },
+    "padding": {
+      "x": {
+        "value": "{spacing.6}",
+        "type": "dimension"
+      }
+    },
+    "logo": {
+      "height": {
+        "value": "32px",
+        "type": "dimension"
+      }
+    },
+    "item": {
+      "padding": {
+        "x": {
+          "value": "{spacing.4}",
+          "type": "dimension"
+        },
+        "y": {
+          "value": "{spacing.2}",
+          "type": "dimension"
+        }
+      },
+      "gap": {
+        "value": "{spacing.2}",
+        "type": "dimension"
+      }
+    },
+    "mobile": {
+      "breakpoint": {
+        "value": "768px",
+        "type": "dimension"
+      }
+    }
+  },
+  "menu": {
+    "item": {
+      "padding": {
+        "x": {
+          "value": "{spacing.4}",
+          "type": "dimension"
+        },
+        "y": {
+          "value": "{spacing.2}",
+          "type": "dimension"
+        }
+      },
+      "minHeight": {
+        "value": "36px",
+        "type": "dimension"
+      },
+      "iconGap": {
+        "value": "{spacing.3}",
+        "type": "dimension"
+      }
+    },
+    "submenu": {
+      "offset": {
+        "value": "{spacing.1}",
+        "type": "dimension"
+      },
+      "indent": {
+        "value": "{spacing.4}",
+        "type": "dimension"
+      }
+    },
+    "divider": {
+      "margin": {
+        "value": "{spacing.2}",
+        "type": "dimension"
+      },
+      "thickness": {
+        "value": "1px",
+        "type": "dimension"
+      }
+    }
+  },
+  "skipLink": {
+    "position": {
+      "top": {
+        "value": "0",
+        "type": "dimension"
+      },
+      "left": {
+        "value": "0",
+        "type": "dimension"
+      }
+    },
+    "padding": {
+      "x": {
+        "value": "{spacing.4}",
+        "type": "dimension"
+      },
+      "y": {
+        "value": "{spacing.2}",
+        "type": "dimension"
+      }
+    },
+    "zIndex": {
+      "value": "9999",
+      "type": "number"
+    },
+    "offset": {
+      "hidden": {
+        "value": "-100%",
+        "type": "dimension"
+      }
+    }
+  },
+  "list": {
+    "item": {
+      "padding": {
+        "x": {
+          "value": "{spacing.4}",
+          "type": "dimension"
+        },
+        "y": {
+          "value": "{spacing.3}",
+          "type": "dimension"
+        }
+      },
+      "gap": {
+        "value": "{spacing.3}",
+        "type": "dimension"
+      }
+    },
+    "divider": {
+      "thickness": {
+        "value": "1px",
+        "type": "dimension"
+      }
+    },
+    "indent": {
+      "nested": {
+        "value": "{spacing.6}",
+        "type": "dimension"
+      }
+    },
+    "marker": {
+      "size": {
+        "value": "8px",
+        "type": "dimension"
+      },
+      "gap": {
+        "value": "{spacing.2}",
+        "type": "dimension"
+      }
+    }
+  },
+  "treeView": {
+    "node": {
+      "padding": {
+        "x": {
+          "value": "{spacing.2}",
+          "type": "dimension"
+        },
+        "y": {
+          "value": "{spacing.1}",
+          "type": "dimension"
+        }
+      },
+      "minHeight": {
+        "value": "32px",
+        "type": "dimension"
+      }
+    },
+    "indent": {
+      "perLevel": {
+        "value": "{spacing.6}",
+        "type": "dimension"
+      }
+    },
+    "connector": {
+      "width": {
+        "value": "1px",
+        "type": "dimension"
+      },
+      "style": {
+        "value": "dotted",
+        "type": "string"
+      }
+    },
+    "icon": {
+      "size": {
+        "value": "16px",
+        "type": "dimension"
+      },
+      "gap": {
+        "value": "{spacing.2}",
+        "type": "dimension"
+      }
+    }
+  },
+  "descriptionList": {
+    "gap": {
+      "row": {
+        "value": "{spacing.3}",
+        "type": "dimension"
+      },
+      "column": {
+        "value": "{spacing.4}",
+        "type": "dimension"
+      }
+    },
+    "term": {
+      "fontWeight": {
+        "value": "{fontWeight.semibold}",
+        "type": "number"
+      },
+      "minWidth": {
+        "value": "120px",
+        "type": "dimension"
+      }
+    },
+    "description": {
+      "indent": {
+        "value": "{spacing.6}",
+        "type": "dimension"
+      }
+    },
+    "layout": {
+      "horizontal": {
+        "termWidth": {
+          "value": "30%",
+          "type": "dimension"
+        }
+      }
+    }
+  },
+  "emptyState": {
+    "container": {
+      "padding": {
+        "value": "{spacing.8}",
+        "type": "dimension"
+      },
+      "maxWidth": {
+        "value": "400px",
+        "type": "dimension"
+      },
+      "textAlign": {
+        "value": "center",
+        "type": "string"
+      }
+    },
+    "icon": {
+      "size": {
+        "value": "64px",
+        "type": "dimension"
+      },
+      "marginBottom": {
+        "value": "{spacing.4}",
+        "type": "dimension"
+      }
+    },
+    "title": {
+      "fontSize": {
+        "value": "{fontSize.xl}",
+        "type": "dimension"
+      },
+      "marginBottom": {
+        "value": "{spacing.2}",
+        "type": "dimension"
+      }
+    },
+    "description": {
+      "fontSize": {
+        "value": "{fontSize.base}",
+        "type": "dimension"
+      },
+      "marginBottom": {
+        "value": "{spacing.6}",
+        "type": "dimension"
+      }
+    },
+    "action": {
+      "gap": {
+        "value": "{spacing.3}",
+        "type": "dimension"
       }
     }
   }
