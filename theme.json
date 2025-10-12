@@ -1,0 +1,77 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "light": {
+    "surface": {
+      "default": { "value": "{neutral.0}", "type": "color" },
+      "raised": { "value": "{neutral.50}", "type": "color" },
+      "subdued": { "value": "{neutral.100}", "type": "color" },
+      "overlay": { "value": "{neutral.900}", "type": "color" },
+      "inverse": { "value": "{neutral.900}", "type": "color" }
+    },
+    "content": {
+      "primary": { "value": "{neutral.900}", "type": "color" },
+      "secondary": { "value": "{neutral.600}", "type": "color" },
+      "tertiary": { "value": "{neutral.500}", "type": "color" },
+      "disabled": { "value": "{neutral.400}", "type": "color" },
+      "inverse": { "value": "{neutral.0}", "type": "color" }
+    },
+    "border": {
+      "default": { "value": "{neutral.200}", "type": "color" },
+      "strong": { "value": "{neutral.400}", "type": "color" },
+      "subtle": { "value": "{neutral.100}", "type": "color" }
+    },
+    "accessibility": {
+      "contrast": {
+        "text": { "value": "{neutral.900}", "type": "color", "description": "7:1 contrast on white" },
+        "interactive": { "value": "{brand.primary}", "type": "color", "description": "4.5:1 minimum" }
+      },
+      "focus": {
+        "ring": { "value": "{brand.primary}", "type": "color", "description": "3:1 contrast with background" }
+      }
+    }
+  },
+  "dark": {
+    "surface": {
+      "default": { "value": "{neutral.900}", "type": "color" },
+      "raised": { "value": "{neutral.800}", "type": "color" },
+      "subdued": { "value": "{neutral.950}", "type": "color" },
+      "overlay": { "value": "{neutral.950}", "type": "color" },
+      "inverse": { "value": "{neutral.0}", "type": "color" }
+    },
+    "content": {
+      "primary": { "value": "{neutral.50}", "type": "color" },
+      "secondary": { "value": "{neutral.300}", "type": "color" },
+      "tertiary": { "value": "{neutral.400}", "type": "color" },
+      "disabled": { "value": "{neutral.600}", "type": "color" },
+      "inverse": { "value": "{neutral.900}", "type": "color" }
+    },
+    "border": {
+      "default": { "value": "{neutral.700}", "type": "color" },
+      "strong": { "value": "{neutral.500}", "type": "color" },
+      "subtle": { "value": "{neutral.800}", "type": "color" }
+    },
+    "accessibility": {
+      "contrast": {
+        "text": { "value": "{neutral.50}", "type": "color", "description": "7:1 contrast on dark" },
+        "interactive": { "value": "{color.blue.400}", "type": "color", "description": "Enhanced for dark mode" }
+      },
+      "focus": {
+        "ring": { "value": "{color.blue.400}", "type": "color", "description": "3:1 contrast on dark" }
+      }
+    }
+  },
+  "highContrast": {
+    "light": {
+      "surface": { "default": { "value": "#FFFFFF", "type": "color" } },
+      "content": { "primary": { "value": "#000000", "type": "color" } },
+      "border": { "default": { "value": "#000000", "type": "color" } },
+      "interactive": { "value": "#0000FF", "type": "color" }
+    },
+    "dark": {
+      "surface": { "default": { "value": "#000000", "type": "color" } },
+      "content": { "primary": { "value": "#FFFFFF", "type": "color" } },
+      "border": { "default": { "value": "#FFFFFF", "type": "color" } },
+      "interactive": { "value": "#00FFFF", "type": "color" }
+    }
+  }
+}

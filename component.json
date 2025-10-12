@@ -429,7 +429,7 @@
         "desktop": { "value": "{accessibility.targetSize.minimum.desktop}", "type": "dimension" }
       },
       "spacing": {
-        "between": { "value": "{accessibility.targetSize.spacing.minimum}", "type": "dimension", "description": "Minimum space between buttons" }
+        "between": { "value": "{accessibility.targetSize.minimum.mobile}", "type": "dimension", "description": "Minimum space between buttons" }
       }
     },
     "input": {

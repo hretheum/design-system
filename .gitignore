@@ -1,5 +1,29 @@
+# Dependencies
 node_modules/
 package-lock.json
-.DS_Store
-*.log
+
+# Build outputs
 dist/
+build/
+storybook-static/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test coverage
+coverage/
+
+# Environment
+.env
+.env.local
