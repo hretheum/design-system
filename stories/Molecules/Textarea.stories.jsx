@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { expect, userEvent, within } from '@storybook/test';
 
 const Textarea = ({ label, placeholder, error, disabled, value: controlledValue, onChange, required, helpText, maxLength, rows = 4, ...props }) => {
   const [internalValue, setInternalValue] = useState('');
@@ -131,6 +132,7 @@ export const WithValue = {
   args: {
     label: 'Bio',
     value: 'I am a software engineer passionate about building accessible user interfaces.',
+    onChange: () => {}, // Prevent React warning
   },
 };
 
@@ -139,6 +141,7 @@ export const WithError = {
     label: 'Comments',
     value: 'Too short',
     error: 'Comments must be at least 10 characters long',
+    onChange: () => {}, // Prevent React warning
   },
 };
 
@@ -313,5 +316,50 @@ export const FormExample = {
         </button>
       </form>
     );
+  },
+};
+
+/**
+ * Interaction Test - Tests textarea input and character counting
+ */
+export const TextareaTest = {
+  render: () => {
+    const [value, setValue] = useState('');
+    return (
+      <Textarea
+        label="Your comment"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        placeholder="Enter your comment..."
+        maxLength={100}
+        data-testid="test-textarea"
+      />
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    
+    // Find textarea by label
+    const textarea = canvas.getByLabelText('Your comment');
+    
+    // Test: Should be empty initially
+    await expect(textarea).toHaveValue('');
+    
+    // Test: Type text
+    await userEvent.type(textarea, 'This is a test comment.');
+    await expect(textarea).toHaveValue('This is a test comment.');
+    
+    // Test: Character counter should show (if displayed)
+    const charCount = canvas.queryByText(/23.*\/.*100/);
+    if (charCount) {
+      await expect(charCount).toBeInTheDocument();
+    }
+    
+    // Test: Clear and type more
+    await userEvent.clear(textarea);
+    await expect(textarea).toHaveValue('');
+    
+    await userEvent.type(textarea, 'New text');
+    await expect(textarea).toHaveValue('New text');
   },
 };

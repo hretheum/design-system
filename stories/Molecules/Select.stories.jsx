@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { expect, userEvent, within } from '@storybook/test';
 
-const Select = ({ label, options, placeholder, value, onChange, disabled, error, required, helpText, id, ...props }) => {
+const Select = ({ label, options, placeholder, value, onChange, disabled, error, required, helpText, id, readOnly, ...props }) => {
   const selectId = id || `select-${Math.random().toString(36).substr(2, 9)}`;
   
   return (
@@ -147,6 +147,7 @@ export const WithValue = {
     label: 'Country',
     options: countryOptions,
     value: 'uk',
+    onChange: () => {}, // Prevent React warning
   },
 };
 

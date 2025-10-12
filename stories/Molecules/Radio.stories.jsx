@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { expect, userEvent, within } from '@storybook/test';
 
 const Radio = ({ label, value, checked, onChange, disabled, name, error, ...props }) => {
   return (
@@ -219,5 +220,56 @@ export const DisabledGroup = {
     ];
     
     return <RadioGroup options={options} value="option2" disabled />;
+  },
+};
+
+/**
+ * Interaction Test - Tests radio selection
+ */
+export const RadioTest = {
+  render: () => {
+    const [value, setValue] = useState('');
+    const options = [
+      { label: 'Credit Card', value: 'card' },
+      { label: 'PayPal', value: 'paypal' },
+      { label: 'Bank Transfer', value: 'bank' },
+    ];
+    
+    return (
+      <RadioGroup
+        label="Payment Method"
+        options={options}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    
+    // Find radio buttons
+    const cardRadio = canvas.getByLabelText('Credit Card');
+    const paypalRadio = canvas.getByLabelText('PayPal');
+    const bankRadio = canvas.getByLabelText('Bank Transfer');
+    
+    // Test: No selection initially
+    await expect(cardRadio).not.toBeChecked();
+    await expect(paypalRadio).not.toBeChecked();
+    await expect(bankRadio).not.toBeChecked();
+    
+    // Test: Select Credit Card
+    await userEvent.click(cardRadio);
+    await expect(cardRadio).toBeChecked();
+    await expect(paypalRadio).not.toBeChecked();
+    
+    // Test: Switch to PayPal
+    await userEvent.click(paypalRadio);
+    await expect(cardRadio).not.toBeChecked();
+    await expect(paypalRadio).toBeChecked();
+    
+    // Test: Switch to Bank Transfer
+    await userEvent.click(bankRadio);
+    await expect(bankRadio).toBeChecked();
+    await expect(paypalRadio).not.toBeChecked();
   },
 };

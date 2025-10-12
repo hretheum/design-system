@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { expect, userEvent, within } from '@storybook/test';
 
 const Tabs = ({ tabs, defaultTab = 0, variant = 'underline', size = 'md', fullWidth = false, onChange }) => {
   const [activeTab, setActiveTab] = useState(defaultTab);
@@ -322,5 +323,46 @@ export const FormExample = {
     ];
 
     return <Tabs tabs={tabs} variant="pills" />;
+  },
+};
+
+/**
+ * Interaction Test - Tests tab switching
+ */
+export const TabsTest = {
+  render: () => {
+    const tabs = [
+      { id: 'home', label: 'Home', content: <div>Home content is displayed</div> },
+      { id: 'profile', label: 'Profile', content: <div>Profile content is displayed</div> },
+      { id: 'settings', label: 'Settings', content: <div>Settings content is displayed</div> },
+    ];
+    
+    return <Tabs tabs={tabs} />;
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    
+    // Test: First tab content should be visible initially
+    await expect(canvas.getByText('Home content is displayed')).toBeInTheDocument();
+    
+    // Test: Other tabs content should not be visible
+    expect(canvas.queryByText('Profile content is displayed')).not.toBeInTheDocument();
+    expect(canvas.queryByText('Settings content is displayed')).not.toBeInTheDocument();
+    
+    // Test: Click Profile tab
+    const profileTab = canvas.getByRole('tab', { name: /profile/i });
+    await userEvent.click(profileTab);
+    
+    // Test: Profile content should be visible
+    await expect(canvas.getByText('Profile content is displayed')).toBeInTheDocument();
+    expect(canvas.queryByText('Home content is displayed')).not.toBeInTheDocument();
+    
+    // Test: Click Settings tab
+    const settingsTab = canvas.getByRole('tab', { name: /settings/i });
+    await userEvent.click(settingsTab);
+    
+    // Test: Settings content should be visible
+    await expect(canvas.getByText('Settings content is displayed')).toBeInTheDocument();
+    expect(canvas.queryByText('Profile content is displayed')).not.toBeInTheDocument();
   },
 };

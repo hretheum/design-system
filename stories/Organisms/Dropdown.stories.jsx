@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { expect, userEvent, within, waitFor } from '@storybook/test';
 
 const Dropdown = ({ trigger, items, position = 'bottom-left', onSelect, ...props }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -486,4 +487,55 @@ export const MultiLevel = {
       ]}
     />
   ),
+};
+
+/**
+ * Interaction Test - Tests dropdown open/close and selection
+ */
+export const DropdownTest = {
+  render: () => {
+    const [selected, setSelected] = useState('');
+    
+    return (
+      <div>
+        <Dropdown
+          trigger="Select Action"
+          items={[
+            { label: 'Edit', onClick: () => setSelected('Edit') },
+            { label: 'Delete', onClick: () => setSelected('Delete') },
+            { label: 'Share', onClick: () => setSelected('Share') },
+          ]}
+        />
+        {selected && <div style={{ marginTop: '1rem' }}>Selected: {selected}</div>}
+      </div>
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    
+    // Test: Dropdown should be closed initially
+    expect(canvas.queryByText('Edit')).not.toBeInTheDocument();
+    
+    // Test: Click trigger to open dropdown
+    const trigger = canvas.getByText('Select Action');
+    await userEvent.click(trigger);
+    
+    // Test: Menu items should be visible
+    await waitFor(() => {
+      expect(canvas.getByText('Edit')).toBeInTheDocument();
+      expect(canvas.getByText('Delete')).toBeInTheDocument();
+      expect(canvas.getByText('Share')).toBeInTheDocument();
+    });
+    
+    // Test: Click an item
+    await userEvent.click(canvas.getByText('Edit'));
+    
+    // Test: Selection should be displayed
+    await waitFor(() => {
+      expect(canvas.getByText('Selected: Edit')).toBeInTheDocument();
+    });
+    
+    // Test: Menu should close after selection
+    expect(canvas.queryByRole('menu')).not.toBeInTheDocument();
+  },
 };

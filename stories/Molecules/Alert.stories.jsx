@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { expect, userEvent, within, waitFor } from '@storybook/test';
 
 const Alert = ({ variant = 'info', title, children, onClose, icon, ...props }) => {
   const variants = {
@@ -290,5 +291,56 @@ export const FormValidation = {
         </button>
       </div>
     );
+  },
+};
+
+/**
+ * Interaction Test - Tests alert dismissal
+ */
+export const AlertTest = {
+  render: () => {
+    const [visible, setVisible] = useState(true);
+    
+    if (!visible) {
+      return (
+        <button
+          onClick={() => setVisible(true)}
+          style={{ padding: '0.5rem 1rem', background: 'var(--color-blue-600)', color: 'white', border: 'none', borderRadius: '6px' }}
+        >
+          Show Alert
+        </button>
+      );
+    }
+    
+    return (
+      <Alert
+        variant="info"
+        title="Important Notice"
+        onClose={() => setVisible(false)}
+      >
+        This is a dismissible alert. Click the close button to dismiss it.
+      </Alert>
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    
+    // Test: Alert should be visible initially
+    const alert = canvas.getByRole('alert');
+    await expect(alert).toBeInTheDocument();
+    await expect(canvas.getByText('Important Notice')).toBeInTheDocument();
+    
+    // Test: Find and click close button
+    const closeButton = canvas.getByRole('button', { name: /close/i });
+    await userEvent.click(closeButton);
+    
+    // Test: Alert should disappear
+    await waitFor(() => {
+      expect(canvas.queryByRole('alert')).not.toBeInTheDocument();
+    });
+    
+    // Test: Show button should appear
+    const showButton = await canvas.findByText('Show Alert');
+    await expect(showButton).toBeInTheDocument();
   },
 };

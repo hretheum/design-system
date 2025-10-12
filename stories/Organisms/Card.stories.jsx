@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { expect, userEvent, within } from '@storybook/test';
 
 const Card = ({ variant = 'elevated', padding = 'md', header, footer, children, interactive = false, onClick, ...props }) => {
   const variants = {
@@ -336,4 +337,49 @@ export const GridLayout = {
       ))}
     </div>
   ),
+};
+
+/**
+ * Interaction Test - Tests interactive card clicks
+ */
+export const CardTest = {
+  render: () => {
+    const [clicks, setClicks] = useState(0);
+    
+    return (
+      <Card 
+        interactive 
+        onClick={() => setClicks(clicks + 1)}
+        data-testid="test-card"
+      >
+        <h3>Interactive Card</h3>
+        <p>Click this card to increment the counter</p>
+        <div style={{ marginTop: '1rem', padding: '0.5rem', background: 'var(--surface-subdued)', borderRadius: '4px' }}>
+          Clicks: {clicks}
+        </div>
+      </Card>
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    
+    // Test: Initial click count should be 0
+    await expect(canvas.getByText('Clicks: 0')).toBeInTheDocument();
+    
+    // Test: Click card
+    const card = canvas.getByTestId('test-card');
+    await userEvent.click(card);
+    
+    // Test: Click count should increment
+    await expect(canvas.getByText('Clicks: 1')).toBeInTheDocument();
+    
+    // Test: Click again
+    await userEvent.click(card);
+    await expect(canvas.getByText('Clicks: 2')).toBeInTheDocument();
+    
+    // Test: Multiple clicks
+    await userEvent.click(card);
+    await userEvent.click(card);
+    await expect(canvas.getByText('Clicks: 4')).toBeInTheDocument();
+  },
 };

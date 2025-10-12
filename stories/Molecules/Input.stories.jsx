@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { expect, userEvent, within } from '@storybook/test';
 
-const Input = ({ label, placeholder, error, disabled, type = 'text', value, required, helpText, ...props }) => {
+const Input = ({ label, placeholder, error, disabled, type = 'text', value, required, helpText, readOnly, ...props }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', width: '100%', maxWidth: '400px' }}>
       {label && (
@@ -21,6 +21,7 @@ const Input = ({ label, placeholder, error, disabled, type = 'text', value, requ
         value={value}
         disabled={disabled}
         required={required}
+        readOnly={readOnly}
         aria-invalid={error ? 'true' : 'false'}
         aria-describedby={error ? 'input-error' : helpText ? 'input-help' : undefined}
         style={{
@@ -98,6 +99,7 @@ export const WithValue = {
   args: {
     label: 'Username',
     value: 'johndoe',
+    readOnly: true,
   },
 };
 
@@ -106,6 +108,7 @@ export const WithError = {
     label: 'Email Address',
     value: 'invalid-email',
     error: 'Please enter a valid email address',
+    readOnly: true,
   },
 };
 
