@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { expect, userEvent, within } from '@storybook/test';
 
-const Textarea = ({ label, placeholder, error, disabled, value: controlledValue, onChange, required, helpText, maxLength, rows = 4, ...props }) => {
+const Textarea = ({ label, placeholder, error, disabled, value: controlledValue, onChange, required, helpText, maxLength, rows = 4, id, ...props }) => {
   const [internalValue, setInternalValue] = useState('');
   const isControlled = controlledValue !== undefined;
   const value = isControlled ? controlledValue : internalValue;
+  const textareaId = id || `textarea-${Math.random().toString(36).substr(2, 9)}`;
   
   const handleChange = (e) => {
     if (!isControlled) {
@@ -19,7 +20,7 @@ const Textarea = ({ label, placeholder, error, disabled, value: controlledValue,
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', width: '100%', maxWidth: '600px' }}>
       {label && (
-        <label style={{
+        <label htmlFor={textareaId} style={{
           fontSize: 'var(--font-size-base)',
           fontWeight: 500,
           color: 'var(--content-primary)',
@@ -30,6 +31,7 @@ const Textarea = ({ label, placeholder, error, disabled, value: controlledValue,
       )}
       
       <textarea
+        id={textareaId}
         placeholder={placeholder}
         value={value}
         onChange={handleChange}

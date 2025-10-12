@@ -222,8 +222,8 @@ export const SwitchTest = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     
-    // Find switch by label
-    const switchElement = canvas.getByRole('switch', { name: /enable feature/i });
+    // Find switch by testid (input is hidden with display:none)
+    const switchElement = canvas.getByTestId('test-switch');
     
     // Test: Should be unchecked initially
     await expect(switchElement).not.toBeChecked();

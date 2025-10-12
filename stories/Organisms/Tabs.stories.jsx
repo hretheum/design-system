@@ -343,26 +343,28 @@ export const TabsTest = {
     const canvas = within(canvasElement);
     
     // Test: First tab content should be visible initially
-    await expect(canvas.getByText('Home content is displayed')).toBeInTheDocument();
+    await expect(canvas.getByText('Home content is displayed')).toBeVisible();
     
-    // Test: Other tabs content should not be visible
-    expect(canvas.queryByText('Profile content is displayed')).not.toBeInTheDocument();
-    expect(canvas.queryByText('Settings content is displayed')).not.toBeInTheDocument();
+    // Test: Other tabs content should be hidden (still in DOM but not visible)
+    const profileContent = canvas.getByText('Profile content is displayed');
+    const settingsContent = canvas.getByText('Settings content is displayed');
+    await expect(profileContent).not.toBeVisible();
+    await expect(settingsContent).not.toBeVisible();
     
     // Test: Click Profile tab
     const profileTab = canvas.getByRole('tab', { name: /profile/i });
     await userEvent.click(profileTab);
     
-    // Test: Profile content should be visible
-    await expect(canvas.getByText('Profile content is displayed')).toBeInTheDocument();
-    expect(canvas.queryByText('Home content is displayed')).not.toBeInTheDocument();
+    // Test: Profile content should be visible, Home hidden
+    await expect(profileContent).toBeVisible();
+    await expect(canvas.getByText('Home content is displayed')).not.toBeVisible();
     
     // Test: Click Settings tab
     const settingsTab = canvas.getByRole('tab', { name: /settings/i });
     await userEvent.click(settingsTab);
     
-    // Test: Settings content should be visible
-    await expect(canvas.getByText('Settings content is displayed')).toBeInTheDocument();
-    expect(canvas.queryByText('Profile content is displayed')).not.toBeInTheDocument();
+    // Test: Settings content should be visible, Profile hidden
+    await expect(settingsContent).toBeVisible();
+    await expect(profileContent).not.toBeVisible();
   },
 };

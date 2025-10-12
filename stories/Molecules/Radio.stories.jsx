@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { expect, userEvent, within } from '@storybook/test';
+import { expect, userEvent, within, waitFor } from '@storybook/test';
 
 const Radio = ({ label, value, checked, onChange, disabled, name, error, ...props }) => {
   return (
@@ -259,17 +259,17 @@ export const RadioTest = {
     
     // Test: Select Credit Card
     await userEvent.click(cardRadio);
-    await expect(cardRadio).toBeChecked();
+    await waitFor(() => expect(cardRadio).toBeChecked());
     await expect(paypalRadio).not.toBeChecked();
     
     // Test: Switch to PayPal
     await userEvent.click(paypalRadio);
+    await waitFor(() => expect(paypalRadio).toBeChecked());
     await expect(cardRadio).not.toBeChecked();
-    await expect(paypalRadio).toBeChecked();
     
     // Test: Switch to Bank Transfer
     await userEvent.click(bankRadio);
-    await expect(bankRadio).toBeChecked();
+    await waitFor(() => expect(bankRadio).toBeChecked());
     await expect(paypalRadio).not.toBeChecked();
   },
 };
