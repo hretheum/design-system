@@ -98,7 +98,7 @@ const Textarea = ({ label, placeholder, error, disabled, value: controlledValue,
 };
 
 export default {
-  title: 'Forms/Textarea',
+  title: 'Molecules/Textarea',
   component: Textarea,
   parameters: {
     docs: {

@@ -50,7 +50,7 @@ const Button = ({ children, variant = 'primary', size = 'md', disabled = false, 
 };
 
 export default {
-  title: 'Components/Button',
+  title: 'Atoms/Button',
   component: Button,
   parameters: {
     docs: {

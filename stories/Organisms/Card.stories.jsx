@@ -104,7 +104,7 @@ const Card = ({ variant = 'elevated', padding = 'md', header, footer, children, 
 };
 
 export default {
-  title: 'Containers/Card',
+  title: 'Organisms/Card',
   component: Card,
   parameters: {
     docs: {

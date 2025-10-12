@@ -89,7 +89,7 @@ const Breadcrumb = ({ items, separator = '/', size = 'md', ...props }) => {
 };
 
 export default {
-  title: 'Navigation/Breadcrumb',
+  title: 'Organisms/Breadcrumb',
   component: Breadcrumb,
   parameters: {
     docs: {

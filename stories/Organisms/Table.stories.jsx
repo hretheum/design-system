@@ -124,7 +124,7 @@ const Table = ({ columns, data, sortable = false, selectable = false, striped = 
 };
 
 export default {
-  title: 'Advanced/Table',
+  title: 'Organisms/Table',
   component: Table,
   parameters: {
     docs: {

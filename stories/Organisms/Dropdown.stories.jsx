@@ -147,7 +147,7 @@ const Dropdown = ({ trigger, items, position = 'bottom-left', onSelect, ...props
 };
 
 export default {
-  title: 'Containers/Dropdown',
+  title: 'Organisms/Dropdown',
   component: Dropdown,
   parameters: {
     docs: {

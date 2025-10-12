@@ -49,7 +49,7 @@ const Badge = ({ variant = 'default', size = 'md', children, dot, ...props }) =>
 };
 
 export default {
-  title: 'Feedback/Badge',
+  title: 'Atoms/Badge',
   component: Badge,
   parameters: {
     docs: {

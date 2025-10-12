@@ -85,7 +85,7 @@ const Tooltip = ({ content, children, position = 'top', delay = 0, ...props }) =
 };
 
 export default {
-  title: 'Containers/Tooltip',
+  title: 'Molecules/Tooltip',
   component: Tooltip,
   parameters: {
     docs: {

@@ -101,7 +101,7 @@ const Select = ({ label, options, placeholder, value, onChange, disabled, error,
 };
 
 export default {
-  title: 'Forms/Select',
+  title: 'Molecules/Select',
   component: Select,
   parameters: {
     docs: {

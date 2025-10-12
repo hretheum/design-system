@@ -96,7 +96,7 @@ const RadioGroup = ({ options, value, onChange, disabled, error, direction = 've
 };
 
 export default {
-  title: 'Forms/Radio',
+  title: 'Molecules/Radio',
   component: Radio,
   parameters: {
     docs: {

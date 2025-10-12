@@ -115,7 +115,7 @@ const Tabs = ({ tabs, defaultTab = 0, variant = 'underline', size = 'md', fullWi
 };
 
 export default {
-  title: 'Navigation/Tabs',
+  title: 'Organisms/Tabs',
   component: Tabs,
   parameters: {
     docs: {

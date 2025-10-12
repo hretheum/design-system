@@ -219,7 +219,7 @@ const Pagination = ({ currentPage = 1, totalPages = 10, onPageChange, size = 'md
 };
 
 export default {
-  title: 'Navigation/Pagination',
+  title: 'Organisms/Pagination',
   component: Pagination,
   parameters: {
     docs: {

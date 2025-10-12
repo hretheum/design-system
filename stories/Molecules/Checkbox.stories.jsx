@@ -94,7 +94,7 @@ const Checkbox = ({ label, checked: controlledChecked, onChange, disabled, indet
 };
 
 export default {
-  title: 'Forms/Checkbox',
+  title: 'Molecules/Checkbox',
   component: Checkbox,
   parameters: {
     docs: {

@@ -156,7 +156,7 @@ const Wizard = ({ steps, currentStep, onStepChange, orientation = 'horizontal', 
 };
 
 export default {
-  title: 'Advanced/Wizard',
+  title: 'Organisms/Wizard',
   component: Wizard,
   parameters: {
     docs: {

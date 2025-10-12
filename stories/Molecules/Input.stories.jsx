@@ -65,7 +65,7 @@ const Input = ({ label, placeholder, error, disabled, type = 'text', value, requ
 };
 
 export default {
-  title: 'Forms/Input',
+  title: 'Molecules/Input',
   component: Input,
   parameters: {
     docs: {

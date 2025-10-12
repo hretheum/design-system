@@ -186,7 +186,7 @@ const Datepicker = ({ value, onChange, minDate, maxDate, size = 'md', ...props }
 };
 
 export default {
-  title: 'Advanced/Datepicker',
+  title: 'Organisms/Datepicker',
   component: Datepicker,
   parameters: {
     docs: {

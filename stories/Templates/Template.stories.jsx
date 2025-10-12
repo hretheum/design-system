@@ -141,7 +141,7 @@ const TemplateComponent = ({
  */
 
 export default {
-  title: 'Template/TemplateComponent',
+  title: 'Templates/TemplateComponent',
   component: TemplateComponent,
   parameters: {
     docs: {

@@ -133,7 +133,7 @@ const Toast = ({ variant = 'info', title, children, duration = 5000, onClose, po
 };
 
 export default {
-  title: 'Feedback/Toast',
+  title: 'Molecules/Toast',
   component: Toast,
   parameters: {
     docs: {

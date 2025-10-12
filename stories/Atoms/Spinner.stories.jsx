@@ -78,7 +78,7 @@ const Spinner = ({ size = 'md', variant = 'primary', label, ...props }) => {
 };
 
 export default {
-  title: 'Feedback/Spinner',
+  title: 'Atoms/Spinner',
   component: Spinner,
   parameters: {
     docs: {

@@ -120,7 +120,7 @@ const Stepper = ({ steps, currentStep, orientation = 'horizontal', size = 'md' }
 };
 
 export default {
-  title: 'Advanced/Stepper',
+  title: 'Organisms/Stepper',
   component: Stepper,
   parameters: {
     docs: {

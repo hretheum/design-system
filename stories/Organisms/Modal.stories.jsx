@@ -161,7 +161,7 @@ const Modal = ({ isOpen, onClose, title, children, footer, size = 'md', closeOnB
 };
 
 export default {
-  title: 'Containers/Modal',
+  title: 'Organisms/Modal',
   component: Modal,
   parameters: {
     docs: {

@@ -87,7 +87,7 @@ const Switch = ({ label, checked: controlledChecked, onChange, disabled, ...prop
 };
 
 export default {
-  title: 'Forms/Switch',
+  title: 'Molecules/Switch',
   component: Switch,
   parameters: {
     docs: {

@@ -78,7 +78,7 @@ const ProgressBar = ({ value = 0, max = 100, size = 'md', variant = 'primary', l
 };
 
 export default {
-  title: 'Feedback/ProgressBar',
+  title: 'Atoms/ProgressBar',
   component: ProgressBar,
   parameters: {
     docs: {

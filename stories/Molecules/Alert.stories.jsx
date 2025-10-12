@@ -102,7 +102,7 @@ const Alert = ({ variant = 'info', title, children, onClose, icon, ...props }) =
 };
 
 export default {
-  title: 'Feedback/Alert',
+  title: 'Molecules/Alert',
   component: Alert,
   parameters: {
     docs: {
