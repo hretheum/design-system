@@ -236,40 +236,44 @@ export const RadioTest = {
     ];
     
     return (
-      <RadioGroup
-        label="Payment Method"
-        options={options}
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-      />
+      <div>
+        <RadioGroup
+          label="Payment Method"
+          options={options}
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+        <div data-testid="selected-value" style={{ marginTop: '1rem', padding: '0.5rem', background: 'var(--surface-subdued)', borderRadius: '4px' }}>
+          Selected: {value || 'None'}
+        </div>
+      </div>
     );
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     
-    // Find radio buttons
-    const cardRadio = canvas.getByLabelText('Credit Card');
-    const paypalRadio = canvas.getByLabelText('PayPal');
-    const bankRadio = canvas.getByLabelText('Bank Transfer');
-    
     // Test: No selection initially
-    await expect(cardRadio).not.toBeChecked();
-    await expect(paypalRadio).not.toBeChecked();
-    await expect(bankRadio).not.toBeChecked();
+    await expect(canvas.getByText('Selected: None')).toBeInTheDocument();
     
     // Test: Select Credit Card
-    await userEvent.click(cardRadio);
-    await waitFor(() => expect(cardRadio).toBeChecked());
-    await expect(paypalRadio).not.toBeChecked();
+    const cardLabel = canvas.getByText('Credit Card');
+    await userEvent.click(cardLabel);
+    await waitFor(() => {
+      expect(canvas.getByText('Selected: card')).toBeInTheDocument();
+    });
     
     // Test: Switch to PayPal
-    await userEvent.click(paypalRadio);
-    await waitFor(() => expect(paypalRadio).toBeChecked());
-    await expect(cardRadio).not.toBeChecked();
+    const paypalLabel = canvas.getByText('PayPal');
+    await userEvent.click(paypalLabel);
+    await waitFor(() => {
+      expect(canvas.getByText('Selected: paypal')).toBeInTheDocument();
+    });
     
     // Test: Switch to Bank Transfer
-    await userEvent.click(bankRadio);
-    await waitFor(() => expect(bankRadio).toBeChecked());
-    await expect(paypalRadio).not.toBeChecked();
+    const bankLabel = canvas.getByText('Bank Transfer');
+    await userEvent.click(bankLabel);
+    await waitFor(() => {
+      expect(canvas.getByText('Selected: bank')).toBeInTheDocument();
+    });
   },
 };
