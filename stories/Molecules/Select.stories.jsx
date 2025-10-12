@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { expect, userEvent, within } from '@storybook/test';
 
-const Select = ({ label, options, placeholder, value, onChange, disabled, error, required, helpText, ...props }) => {
+const Select = ({ label, options, placeholder, value, onChange, disabled, error, required, helpText, id, ...props }) => {
+  const selectId = id || `select-${Math.random().toString(36).substr(2, 9)}`;
+  
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', width: '100%', maxWidth: '400px' }}>
       {label && (
-        <label style={{
+        <label htmlFor={selectId} style={{
           fontSize: 'var(--font-size-base)',
           fontWeight: 500,
           color: 'var(--content-primary)',
@@ -17,6 +19,7 @@ const Select = ({ label, options, placeholder, value, onChange, disabled, error,
       
       <div style={{ position: 'relative' }}>
         <select
+          id={selectId}
           value={value}
           onChange={onChange}
           disabled={disabled}
