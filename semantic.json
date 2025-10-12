@@ -1079,5 +1079,27 @@
       "type": "duration",
       "description": "Skeleton animation duration"
     }
+  },
+  "accessible": {
+    "text": {
+      "highContrast": {
+        "onLight": { "value": "{neutral.950}", "type": "color", "description": "Maximum contrast on light backgrounds" },
+        "onDark": { "value": "{neutral.0}", "type": "color", "description": "Maximum contrast on dark backgrounds" }
+      }
+    },
+    "focus": {
+      "ring": {
+        "color": { "value": "{brand.primary}", "type": "color" },
+        "width": { "value": "2px", "type": "dimension" },
+        "offset": { "value": "2px", "type": "dimension" }
+      },
+      "keyboard": {
+        "color": { "value": "{brand.accent}", "type": "color", "description": "Keyboard-only focus indicator" },
+        "width": { "value": "3px", "type": "dimension" }
+      }
+    },
+    "touch": {
+      "minimum": { "value": "44px", "type": "dimension", "description": "WCAG minimum touch target" }
+    }
   }
 }

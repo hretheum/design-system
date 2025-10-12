@@ -417,5 +417,83 @@
       "md": { "value": "{size.24}", "type": "dimension" },
       "lg": { "value": "{size.32}", "type": "dimension" }
     }
+  },
+  "accessible": {
+    "button": {
+      "minHeight": {
+        "mobile": { "value": "{accessibility.targetSize.minimum.mobile}", "type": "dimension", "description": "WCAG compliant mobile touch target" },
+        "desktop": { "value": "{accessibility.targetSize.minimum.desktop}", "type": "dimension", "description": "WCAG compliant desktop target" }
+      },
+      "minWidth": {
+        "mobile": { "value": "{accessibility.targetSize.minimum.mobile}", "type": "dimension" },
+        "desktop": { "value": "{accessibility.targetSize.minimum.desktop}", "type": "dimension" }
+      },
+      "spacing": {
+        "between": { "value": "{accessibility.targetSize.spacing.minimum}", "type": "dimension", "description": "Minimum space between buttons" }
+      }
+    },
+    "input": {
+      "minHeight": {
+        "mobile": { "value": "{accessibility.targetSize.minimum.mobile}", "type": "dimension" },
+        "desktop": { "value": "36px", "type": "dimension", "description": "Comfortable input height" }
+      },
+      "label": {
+        "gap": { "value": "{spacing.2}", "type": "dimension", "description": "Space between label and input" }
+      }
+    },
+    "link": {
+      "underline": {
+        "default": { "value": "{accessibility.link.underline.thickness}", "type": "dimension" },
+        "hover": { "value": "3px", "type": "dimension", "description": "Enhanced on hover" }
+      },
+      "minTouchArea": {
+        "padding": { "value": "{spacing.2}", "type": "dimension", "description": "Expand touch area" }
+      }
+    },
+    "checkbox": {
+      "size": {
+        "minimum": { "value": "20px", "type": "dimension", "description": "Minimum for visibility and touch" },
+        "recommended": { "value": "24px", "type": "dimension" }
+      }
+    },
+    "radio": {
+      "size": {
+        "minimum": { "value": "20px", "type": "dimension" },
+        "recommended": { "value": "24px", "type": "dimension" }
+      }
+    },
+    "switch": {
+      "minWidth": { "value": "{accessibility.targetSize.minimum.desktop}", "type": "dimension" },
+      "minHeight": { "value": "20px", "type": "dimension" }
+    },
+    "icon": {
+      "minSize": {
+        "clickable": { "value": "{accessibility.targetSize.minimum.desktop}", "type": "dimension", "description": "Minimum for interactive icons" },
+        "decorative": { "value": "16px", "type": "dimension", "description": "Non-interactive icons can be smaller" }
+      }
+    },
+    "modal": {
+      "focus": {
+        "trap": { "value": "true", "type": "other", "description": "Must trap focus for a11y" },
+        "returnTo": { "value": "trigger", "type": "other", "description": "Return focus to trigger on close" }
+      }
+    },
+    "skipLink": {
+      "position": {
+        "hidden": { "value": "{accessibility.skipLink.position.hidden}", "type": "other" },
+        "visible": { "value": "{accessibility.skipLink.position.visible}", "type": "other" }
+      },
+      "zIndex": { "value": "{accessibility.skipLink.zIndex}", "type": "number" }
+    },
+    "form": {
+      "errorMessage": {
+        "minHeight": { "value": "{size.6}", "type": "dimension", "description": "Reserve space to prevent layout shift" },
+        "iconSize": { "value": "{iconSize.sm}", "type": "dimension" }
+      },
+      "requiredIndicator": {
+        "size": { "value": "8px", "type": "dimension" },
+        "spacing": { "value": "{spacing.1}", "type": "dimension" }
+      }
+    }
   }
 }

@@ -1,0 +1,99 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "contrast": {
+    "text": {
+      "aa": {
+        "normal": {
+          "onLight": { "value": "{neutral.900}", "type": "color", "description": "4.5:1 contrast ratio - WCAG AA" },
+          "onDark": { "value": "{neutral.50}", "type": "color", "description": "4.5:1 contrast ratio - WCAG AA" }
+        },
+        "large": {
+          "onLight": { "value": "{neutral.700}", "type": "color", "description": "3:1 contrast ratio for 18pt+ text" },
+          "onDark": { "value": "{neutral.200}", "type": "color", "description": "3:1 contrast ratio for 18pt+ text" }
+        }
+      },
+      "aaa": {
+        "normal": {
+          "onLight": { "value": "{neutral.950}", "type": "color", "description": "7:1 contrast ratio - WCAG AAA" },
+          "onDark": { "value": "{neutral.0}", "type": "color", "description": "7:1 contrast ratio - WCAG AAA" }
+        }
+      }
+    },
+    "interactive": {
+      "minimum": { "value": "3:1", "type": "other", "description": "WCAG 2.1 minimum for UI components" }
+    }
+  },
+  "focus": {
+    "visible": {
+      "outline": {
+        "width": { "value": "2px", "type": "dimension", "description": "WCAG 2.4.7 minimum" },
+        "offset": { "value": "2px", "type": "dimension" },
+        "style": { "value": "solid", "type": "other" }
+      },
+      "color": {
+        "default": { "value": "{brand.primary}", "type": "color" },
+        "highContrast": { "value": "{neutral.950}", "type": "color" },
+        "inverse": { "value": "{neutral.0}", "type": "color" }
+      }
+    }
+  },
+  "targetSize": {
+    "minimum": {
+      "mobile": { "value": "44px", "type": "dimension", "description": "WCAG 2.5.5 AAA" },
+      "desktop": { "value": "24px", "type": "dimension", "description": "WCAG 2.5.5 AA" }
+    },
+    "comfortable": {
+      "mobile": { "value": "48px", "type": "dimension" },
+      "desktop": { "value": "32px", "type": "dimension" }
+    }
+  },
+  "motion": {
+    "reduced": {
+      "duration": { "value": "0ms", "type": "duration", "description": "For prefers-reduced-motion" },
+      "easing": { "value": "cubic-bezier(0, 0, 1, 1)", "type": "cubicBezier" }
+    }
+  },
+  "visuallyHidden": {
+    "position": { "value": "absolute", "type": "other" },
+    "width": { "value": "1px", "type": "dimension" },
+    "height": { "value": "1px", "type": "dimension" },
+    "margin": { "value": "-1px", "type": "dimension" },
+    "overflow": { "value": "hidden", "type": "other" },
+    "clip": { "value": "rect(0, 0, 0, 0)", "type": "other" }
+  },
+  "highContrast": {
+    "border": {
+      "width": { "value": "2px", "type": "dimension" },
+      "color": { "value": "{neutral.950}", "type": "color" }
+    },
+    "background": {
+      "default": { "value": "{neutral.0}", "type": "color" },
+      "selected": { "value": "{color.blue.700}", "type": "color" }
+    },
+    "text": {
+      "default": { "value": "{neutral.950}", "type": "color" },
+      "link": { "value": "{color.blue.700}", "type": "color" }
+    }
+  },
+  "skipLink": {
+    "position": {
+      "hidden": { "top": { "value": "-9999px", "type": "dimension" } },
+      "visible": { "top": { "value": "0", "type": "dimension" } }
+    },
+    "zIndex": { "value": "{zIndex.tooltip}", "type": "number" }
+  },
+  "link": {
+    "underline": {
+      "thickness": { "value": "2px", "type": "dimension" },
+      "offset": { "value": "2px", "type": "dimension" }
+    }
+  },
+  "text": {
+    "size": {
+      "minimum": { "value": "16px", "type": "dimension", "description": "WCAG recommended minimum" }
+    },
+    "lineHeight": {
+      "minimum": { "value": 1.5, "type": "number", "description": "WCAG 1.4.8 minimum" }
+    }
+  }
+}
