@@ -18,7 +18,10 @@
     "format": "prettier --write \"**/*.{js,json,md}\"",
     "generate": "node scripts/generate-component.js",
     "generate:component": "node scripts/generate-component.js",
-    "generate:quick": "node scripts/quick-generate.js"
+    "generate:quick": "node scripts/quick-generate.js",
+    "merge-tokens": "node scripts/merge-tokens.js",
+    "tokens:validate": "node scripts/validate-tokens.js",
+    "tokens:backup": "cp component.json component.json.backup && cp functional.json functional.json.backup"
   },
   "keywords": [
     "design-system",

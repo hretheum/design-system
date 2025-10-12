@@ -101,7 +101,7 @@
   "interactive": {
     "primary": {
       "default": {
-        "value": "{brand.primary}",
+        "value": "{color.blue.600}",
         "type": "color",
         "description": "Primary interactive default state"
       },
@@ -123,7 +123,7 @@
     },
     "secondary": {
       "default": {
-        "value": "{brand.secondary}",
+        "value": "{color.purple.600}",
         "type": "color"
       },
       "hover": {
@@ -141,7 +141,7 @@
     },
     "danger": {
       "default": {
-        "value": "{feedback.error}",
+        "value": "{color.red.500}",
         "type": "color"
       },
       "hover": {
@@ -569,22 +569,22 @@
     },
     "containerWidth": {
       "narrow": {
-        "value": "{containerWidth.sm}",
+        "value": "640px",
         "type": "dimension",
         "description": "Narrow container for focused content"
       },
       "default": {
-        "value": "{containerWidth.lg}",
+        "value": "1024px",
         "type": "dimension",
         "description": "Default container width"
       },
       "wide": {
-        "value": "{containerWidth.xl}",
+        "value": "1280px",
         "type": "dimension",
         "description": "Wide container"
       },
       "full": {
-        "value": "{containerWidth.full}",
+        "value": "100%",
         "type": "dimension",
         "description": "Full width container"
       }
@@ -638,69 +638,69 @@
   },
   "surface": {
     "default": {
-      "value": "{neutral.0}",
+      "value": "{color.white}",
       "type": "color",
       "description": "Default surface (white in light mode)"
     },
     "raised": {
-      "value": "{neutral.50}",
+      "value": "{color.slate.50}",
       "type": "color",
       "description": "Raised surface (slightly elevated)"
     },
     "overlay": {
-      "value": "{neutral.900}",
+      "value": "{color.slate.900}",
       "type": "color",
       "description": "Overlay surface for modals/dialogs backdrop"
     },
     "subdued": {
-      "value": "{neutral.100}",
+      "value": "{color.slate.100}",
       "type": "color",
       "description": "Subdued surface for less emphasis"
     },
     "disabled": {
-      "value": "{neutral.200}",
+      "value": "{color.slate.200}",
       "type": "color",
       "description": "Disabled surface state"
     },
     "inverse": {
-      "value": "{neutral.900}",
+      "value": "{color.slate.900}",
       "type": "color",
       "description": "Inverse surface (dark in light mode)"
     }
   },
   "content": {
     "primary": {
-      "value": "{neutral.900}",
+      "value": "{color.slate.900}",
       "type": "color",
       "description": "Primary text color (highest emphasis)"
     },
     "secondary": {
-      "value": "{neutral.600}",
+      "value": "{color.slate.600}",
       "type": "color",
       "description": "Secondary text color (medium emphasis)"
     },
     "tertiary": {
-      "value": "{neutral.500}",
+      "value": "{color.slate.500}",
       "type": "color",
       "description": "Tertiary text color (low emphasis)"
     },
     "disabled": {
-      "value": "{neutral.400}",
+      "value": "{color.slate.400}",
       "type": "color",
       "description": "Disabled text color"
     },
     "inverse": {
-      "value": "{neutral.0}",
+      "value": "{color.white}",
       "type": "color",
       "description": "Inverse text (white on dark backgrounds)"
     },
     "link": {
-      "value": "{brand.primary}",
+      "value": "{color.blue.600}",
       "type": "color",
       "description": "Link text color"
     },
     "onPrimary": {
-      "value": "{neutral.0}",
+      "value": "{color.white}",
       "type": "color",
       "description": "Text on primary brand color"
     },
@@ -822,7 +822,7 @@
         "type": "color"
       },
       "neutral": {
-        "value": "{neutral.300}",
+        "value": "{color.slate.300}",
         "type": "color"
       },
       "positive": {
@@ -832,15 +832,15 @@
     },
     "comparison": {
       "current": {
-        "value": "{brand.primary}",
+        "value": "{color.blue.600}",
         "type": "color"
       },
       "previous": {
-        "value": "{neutral.400}",
+        "value": "{color.slate.400}",
         "type": "color"
       },
       "target": {
-        "value": "{feedback.success}",
+        "value": "{color.green.500}",
         "type": "color"
       }
     }
@@ -848,7 +848,7 @@
   "focus": {
     "ring": {
       "color": {
-        "value": "{brand.primary}",
+        "value": "{color.blue.600}",
         "type": "color",
         "description": "Focus ring color"
       },
@@ -875,7 +875,7 @@
     },
     "keyboard": {
       "color": {
-        "value": "{brand.accent}",
+        "value": "{color.cyan.500}",
         "type": "color",
         "description": "Keyboard-only focus indicator"
       }
@@ -893,7 +893,7 @@
       "description": "Text color for selected items"
     },
     "border": {
-      "value": "{brand.primary}",
+      "value": "{color.blue.600}",
       "type": "color",
       "description": "Border color for selected items"
     },
@@ -905,22 +905,22 @@
   },
   "divider": {
     "default": {
-      "value": "{neutral.200}",
+      "value": "{color.slate.200}",
       "type": "color",
       "description": "Default divider color"
     },
     "strong": {
-      "value": "{neutral.400}",
+      "value": "{color.slate.400}",
       "type": "color",
       "description": "Strong/emphasized divider"
     },
     "subtle": {
-      "value": "{neutral.100}",
+      "value": "{color.slate.100}",
       "type": "color",
       "description": "Subtle/light divider"
     },
     "inverse": {
-      "value": "{neutral.700}",
+      "value": "{color.slate.700}",
       "type": "color",
       "description": "Divider on dark backgrounds"
     }
@@ -964,41 +964,41 @@
   "transition": {
     "fade": {
       "duration": {
-        "value": "{motion.duration.normal}",
+        "value": "{duration.normal}",
         "type": "duration"
       },
       "easing": {
-        "value": "{motion.easing.inOut}",
+        "value": "{easing.easeInOut}",
         "type": "cubicBezier"
       }
     },
     "slideIn": {
       "duration": {
-        "value": "{motion.duration.normal}",
+        "value": "{duration.normal}",
         "type": "duration"
       },
       "easing": {
-        "value": "{motion.easing.out}",
+        "value": "{easing.easeOut}",
         "type": "cubicBezier"
       }
     },
     "slideOut": {
       "duration": {
-        "value": "{motion.duration.fast}",
+        "value": "{duration.fast}",
         "type": "duration"
       },
       "easing": {
-        "value": "{motion.easing.in}",
+        "value": "{easing.easeIn}",
         "type": "cubicBezier"
       }
     },
     "scale": {
       "duration": {
-        "value": "{motion.duration.fast}",
+        "value": "{duration.fast}",
         "type": "duration"
       },
       "easing": {
-        "value": "{motion.easing.emphasized}",
+        "value": "{easing.emphasized}",
         "type": "cubicBezier"
       }
     }
@@ -1016,7 +1016,7 @@
     },
     "tablet": {
       "min": {
-        "value": "{layout.breakpoint.tablet}",
+        "value": "{breakpoint.md}",
         "type": "dimension"
       },
       "max": {
@@ -1026,7 +1026,7 @@
     },
     "desktop": {
       "min": {
-        "value": "{layout.breakpoint.desktop}",
+        "value": "{breakpoint.lg}",
         "type": "dimension"
       }
     }
@@ -1065,12 +1065,12 @@
   },
   "skeleton": {
     "background": {
-      "value": "{neutral.200}",
+      "value": "{color.slate.200}",
       "type": "color",
       "description": "Skeleton base color"
     },
     "shimmer": {
-      "value": "{neutral.100}",
+      "value": "{color.slate.100}",
       "type": "color",
       "description": "Skeleton shimmer highlight"
     },
@@ -1083,20 +1083,38 @@
   "accessible": {
     "text": {
       "highContrast": {
-        "onLight": { "value": "{neutral.950}", "type": "color", "description": "Maximum contrast on light backgrounds" },
-        "onDark": { "value": "{neutral.0}", "type": "color", "description": "Maximum contrast on dark backgrounds" }
+        "onLight": { "value": "{color.slate.950}", "type": "color", "description": "Maximum contrast on light backgrounds" },
+        "onDark": { "value": "{color.white}", "type": "color", "description": "Maximum contrast on dark backgrounds" }
       }
     },
     "focus": {
       "ring": {
-        "color": { "value": "{brand.primary}", "type": "color" },
+        "color": { "value": "{color.blue.600}", "type": "color" },
         "width": { "value": "2px", "type": "dimension" },
         "offset": { "value": "2px", "type": "dimension" }
       },
       "keyboard": {
-        "color": { "value": "{brand.accent}", "type": "color", "description": "Keyboard-only focus indicator" },
+        "color": { "value": "{color.cyan.500}", "type": "color", "description": "Keyboard-only focus indicator" },
         "width": { "value": "3px", "type": "dimension" }
       }
+    },
+    "targetSize": {
+      "minimum": {
+        "mobile": { "value": "44px", "type": "dimension", "description": "WCAG mobile minimum touch target" },
+        "desktop": { "value": "24px", "type": "dimension", "description": "WCAG desktop minimum target" }
+      }
+    },
+    "link": {
+      "underline": {
+        "thickness": { "value": "1px", "type": "dimension", "description": "Default underline thickness" }
+      }
+    },
+    "skipLink": {
+      "position": {
+        "hidden": { "value": "-9999px", "type": "dimension", "description": "Hidden skip link position" },
+        "visible": { "value": "0", "type": "dimension", "description": "Visible skip link position" }
+      },
+      "zIndex": { "value": "9999", "type": "number", "description": "Skip link z-index" }
     },
     "touch": {
       "minimum": { "value": "44px", "type": "dimension", "description": "WCAG minimum touch target" }
