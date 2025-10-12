@@ -1,0 +1,20 @@
+{
+  "name": "design-tokens",
+  "version": "1.0.0",
+  "description": "Design tokens system with multilayer architecture",
+  "main": "dist/js/tokens.js",
+  "scripts": {
+    "build": "style-dictionary build",
+    "build:clean": "rimraf dist && npm run build",
+    "watch": "nodemon --watch tokens.json --exec npm run build"
+  },
+  "devDependencies": {
+    "style-dictionary": "^3.9.0",
+    "nodemon": "^3.0.0",
+    "rimraf": "^5.0.0"
+  },
+  "keywords": [
+    "design-tokens",
+    "design-system"
+  ]
+}

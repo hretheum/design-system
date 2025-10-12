@@ -1,0 +1,20 @@
+{
+  "Drop shadow": {
+    "X": {
+      "value": 0,
+      "type": "number"
+    },
+    "Y": {
+      "value": 8,
+      "type": "number"
+    },
+    "Blur": {
+      "value": 12,
+      "type": "number"
+    },
+    "Spread": {
+      "value": 6,
+      "type": "number"
+    }
+  }
+}

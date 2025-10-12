@@ -1,0 +1,44 @@
+{
+  "Corner": {
+    "None": {
+      "value": 0,
+      "type": "number"
+    },
+    "Extra-small": {
+      "value": 4,
+      "type": "number"
+    },
+    "Small": {
+      "value": 8,
+      "type": "number"
+    },
+    "Medium": {
+      "value": 12,
+      "type": "number"
+    },
+    "Large": {
+      "value": 16,
+      "type": "number"
+    },
+    "Extra-large": {
+      "value": 28,
+      "type": "number"
+    },
+    "Full": {
+      "value": 1000,
+      "type": "number"
+    },
+    "Large-increased": {
+      "value": 20,
+      "type": "number"
+    },
+    "Extra-large-increased": {
+      "value": 32,
+      "type": "number"
+    },
+    "Extra-extra-large": {
+      "value": 48,
+      "type": "number"
+    }
+  }
+}

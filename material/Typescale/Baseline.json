@@ -1,0 +1,394 @@
+{
+  "Static": {
+    "Title Large": {
+      "Font": {
+        "value": "{Static.Font.Brand}",
+        "type": "text"
+      },
+      "Weight": {
+        "value": "{Static.Weight.Regular}",
+        "type": "text"
+      },
+      "Weight-emphasized": {
+        "value": "{Static.Weight.Medium}",
+        "type": "text"
+      },
+      "Size": {
+        "value": 22,
+        "type": "number"
+      },
+      "Tracking": {
+        "value": 0,
+        "type": "number"
+      },
+      "Line Height": {
+        "value": 28,
+        "type": "number"
+      }
+    },
+    "Title Medium": {
+      "Font": {
+        "value": "{Static.Font.Plain}",
+        "type": "text"
+      },
+      "Weight": {
+        "value": "{Static.Weight.Medium}",
+        "type": "text"
+      },
+      "Weight-emphasized": {
+        "value": "{Static.Weight.Bold}",
+        "type": "text"
+      },
+      "Size": {
+        "value": 16,
+        "type": "number"
+      },
+      "Tracking": {
+        "value": 0.15,
+        "type": "number"
+      },
+      "Line Height": {
+        "value": 24,
+        "type": "number"
+      }
+    },
+    "Title Small": {
+      "Font": {
+        "value": "{Static.Font.Plain}",
+        "type": "text"
+      },
+      "Weight": {
+        "value": "{Static.Weight.Medium}",
+        "type": "text"
+      },
+      "Weight-emphasized": {
+        "value": "{Static.Weight.Bold}",
+        "type": "text"
+      },
+      "Size": {
+        "value": 14,
+        "type": "number"
+      },
+      "Tracking": {
+        "value": 0.1,
+        "type": "number"
+      },
+      "Line Height": {
+        "value": 20,
+        "type": "number"
+      }
+    },
+    "Label Large": {
+      "Font": {
+        "value": "{Static.Font.Plain}",
+        "type": "text"
+      },
+      "Weight": {
+        "value": "{Static.Weight.Medium}",
+        "type": "text"
+      },
+      "Weight-emphasized": {
+        "value": "{Static.Weight.Bold}",
+        "type": "text"
+      },
+      "Size": {
+        "value": 14,
+        "type": "number"
+      },
+      "Tracking": {
+        "value": 0.1,
+        "type": "number"
+      },
+      "Line Height": {
+        "value": 20,
+        "type": "number"
+      }
+    },
+    "Label Medium": {
+      "Font": {
+        "value": "{Static.Font.Plain}",
+        "type": "text"
+      },
+      "Weight": {
+        "value": "{Static.Weight.Medium}",
+        "type": "text"
+      },
+      "Weight-emphasized": {
+        "value": "{Static.Weight.Bold}",
+        "type": "text"
+      },
+      "Size": {
+        "value": 12,
+        "type": "number"
+      },
+      "Tracking": {
+        "value": 0.5,
+        "type": "number"
+      },
+      "Line Height": {
+        "value": 16,
+        "type": "number"
+      }
+    },
+    "Label Small": {
+      "Font": {
+        "value": "{Static.Font.Plain}",
+        "type": "text"
+      },
+      "Weight": {
+        "value": "{Static.Weight.Medium}",
+        "type": "text"
+      },
+      "Weight-emphasized": {
+        "value": "{Static.Weight.Bold}",
+        "type": "text"
+      },
+      "Size": {
+        "value": 11,
+        "type": "number"
+      },
+      "Tracking": {
+        "value": 0.5,
+        "type": "number"
+      },
+      "Line Height": {
+        "value": 16,
+        "type": "number"
+      }
+    },
+    "Headline Small": {
+      "Font": {
+        "value": "{Static.Font.Brand}",
+        "type": "text"
+      },
+      "Weight": {
+        "value": "{Static.Weight.Regular}",
+        "type": "text"
+      },
+      "Weight-emphasized": {
+        "value": "{Static.Weight.Medium}",
+        "type": "text"
+      },
+      "Size": {
+        "value": 24,
+        "type": "number"
+      },
+      "Tracking": {
+        "value": 0,
+        "type": "number"
+      },
+      "Line Height": {
+        "value": 32,
+        "type": "number"
+      }
+    },
+    "Headline Medium": {
+      "Font": {
+        "value": "{Static.Font.Brand}",
+        "type": "text"
+      },
+      "Weight": {
+        "value": "{Static.Weight.Regular}",
+        "type": "text"
+      },
+      "Weight-emphasized": {
+        "value": "{Static.Weight.Medium}",
+        "type": "text"
+      },
+      "Size": {
+        "value": 28,
+        "type": "number"
+      },
+      "Tracking": {
+        "value": 0,
+        "type": "number"
+      },
+      "Line Height": {
+        "value": 36,
+        "type": "number"
+      }
+    },
+    "Headline Large": {
+      "Font": {
+        "value": "{Static.Font.Brand}",
+        "type": "text"
+      },
+      "Weight": {
+        "value": "{Static.Weight.Regular}",
+        "type": "text"
+      },
+      "Weight-emphasized": {
+        "value": "{Static.Weight.Medium}",
+        "type": "text"
+      },
+      "Size": {
+        "value": 32,
+        "type": "number"
+      },
+      "Tracking": {
+        "value": 0,
+        "type": "number"
+      },
+      "Line Height": {
+        "value": 40,
+        "type": "number"
+      }
+    },
+    "Display Small": {
+      "Font": {
+        "value": "{Static.Font.Brand}",
+        "type": "text"
+      },
+      "Weight": {
+        "value": "{Static.Weight.Regular}",
+        "type": "text"
+      },
+      "Weight-emphasized": {
+        "value": "{Static.Weight.Medium}",
+        "type": "text"
+      },
+      "Size": {
+        "value": 36,
+        "type": "number"
+      },
+      "Tracking": {
+        "value": 0,
+        "type": "number"
+      },
+      "Line Height": {
+        "value": 44,
+        "type": "number"
+      }
+    },
+    "Display Medium": {
+      "Font": {
+        "value": "{Static.Font.Brand}",
+        "type": "text"
+      },
+      "Weight": {
+        "value": "{Static.Weight.Regular}",
+        "type": "text"
+      },
+      "Weight-emphasized": {
+        "value": "{Static.Weight.Medium}",
+        "type": "text"
+      },
+      "Size": {
+        "value": 45,
+        "type": "number"
+      },
+      "Line Height": {
+        "value": 52,
+        "type": "number"
+      },
+      "Tracking": {
+        "value": 0,
+        "type": "number"
+      }
+    },
+    "Display Large": {
+      "Font": {
+        "value": "{Static.Font.Brand}",
+        "type": "text"
+      },
+      "Weight": {
+        "value": "{Static.Weight.Regular}",
+        "type": "text"
+      },
+      "Weight-emphasized": {
+        "value": "{Static.Weight.Medium}",
+        "type": "text"
+      },
+      "Size": {
+        "value": 57,
+        "type": "number"
+      },
+      "Tracking": {
+        "value": -0.25,
+        "type": "number"
+      },
+      "Line Height": {
+        "value": 64,
+        "type": "number"
+      }
+    },
+    "Body Large": {
+      "Font": {
+        "value": "{Static.Font.Plain}",
+        "type": "text"
+      },
+      "Weight": {
+        "value": "{Static.Weight.Regular}",
+        "type": "text"
+      },
+      "Weight-emphasized": {
+        "value": "{Static.Weight.Medium}",
+        "type": "text"
+      },
+      "Size": {
+        "value": 16,
+        "type": "number"
+      },
+      "Tracking": {
+        "value": 0.5,
+        "type": "number"
+      },
+      "Line Height": {
+        "value": 24,
+        "type": "number"
+      }
+    },
+    "Body Medium": {
+      "Font": {
+        "value": "{Static.Font.Plain}",
+        "type": "text"
+      },
+      "Weight": {
+        "value": "{Static.Weight.Regular}",
+        "type": "text"
+      },
+      "Weight-emphasized": {
+        "value": "{Static.Weight.Medium}",
+        "type": "text"
+      },
+      "Size": {
+        "value": 14,
+        "type": "number"
+      },
+      "Tracking": {
+        "value": 0.25,
+        "type": "number"
+      },
+      "Line Height": {
+        "value": 20,
+        "type": "number"
+      }
+    },
+    "Body Small": {
+      "Font": {
+        "value": "{Static.Font.Plain}",
+        "type": "text"
+      },
+      "Weight": {
+        "value": "{Static.Weight.Regular}",
+        "type": "text"
+      },
+      "Weight-emphasized": {
+        "value": "{Static.Weight.Medium}",
+        "type": "text"
+      },
+      "Size": {
+        "value": 12,
+        "type": "number"
+      },
+      "Tracking": {
+        "value": 0.4,
+        "type": "number"
+      },
+      "Line Height": {
+        "value": 16,
+        "type": "number"
+      }
+    }
+  }
+}
