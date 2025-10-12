@@ -255,23 +255,24 @@ export const RadioTest = {
     // Test: No selection initially
     await expect(canvas.getByText('Selected: None')).toBeInTheDocument();
     
+    // Find all radio buttons
+    const radios = canvas.getAllByRole('radio');
+    const [cardRadio, paypalRadio, bankRadio] = radios;
+    
     // Test: Select Credit Card
-    const cardLabel = canvas.getByText('Credit Card');
-    await userEvent.click(cardLabel);
+    await userEvent.click(cardRadio);
     await waitFor(() => {
       expect(canvas.getByText('Selected: card')).toBeInTheDocument();
     });
     
     // Test: Switch to PayPal
-    const paypalLabel = canvas.getByText('PayPal');
-    await userEvent.click(paypalLabel);
+    await userEvent.click(paypalRadio);
     await waitFor(() => {
       expect(canvas.getByText('Selected: paypal')).toBeInTheDocument();
     });
     
     // Test: Switch to Bank Transfer
-    const bankLabel = canvas.getByText('Bank Transfer');
-    await userEvent.click(bankLabel);
+    await userEvent.click(bankRadio);
     await waitFor(() => {
       expect(canvas.getByText('Selected: bank')).toBeInTheDocument();
     });
