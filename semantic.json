@@ -1,0 +1,639 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "brand": {
+    "primary": {
+      "value": "{color.blue.600}",
+      "type": "color",
+      "description": "Primary brand color"
+    },
+    "secondary": {
+      "value": "{color.purple.600}",
+      "type": "color",
+      "description": "Secondary brand color"
+    },
+    "accent": {
+      "value": "{color.cyan.500}",
+      "type": "color",
+      "description": "Accent color for emphasis"
+    }
+  },
+  "feedback": {
+    "success": {
+      "value": "{color.green.500}",
+      "type": "color",
+      "description": "Success state color"
+    },
+    "warning": {
+      "value": "{color.amber.500}",
+      "type": "color",
+      "description": "Warning state color"
+    },
+    "error": {
+      "value": "{color.red.500}",
+      "type": "color",
+      "description": "Error state color"
+    },
+    "info": {
+      "value": "{color.blue.500}",
+      "type": "color",
+      "description": "Informational state color"
+    }
+  },
+  "neutral": {
+    "0": {
+      "value": "{color.white}",
+      "type": "color",
+      "description": "Pure white"
+    },
+    "50": {
+      "value": "{color.slate.50}",
+      "type": "color",
+      "description": "Lightest neutral"
+    },
+    "100": {
+      "value": "{color.slate.100}",
+      "type": "color"
+    },
+    "200": {
+      "value": "{color.slate.200}",
+      "type": "color"
+    },
+    "300": {
+      "value": "{color.slate.300}",
+      "type": "color"
+    },
+    "400": {
+      "value": "{color.slate.400}",
+      "type": "color"
+    },
+    "500": {
+      "value": "{color.slate.500}",
+      "type": "color",
+      "description": "Mid neutral"
+    },
+    "600": {
+      "value": "{color.slate.600}",
+      "type": "color"
+    },
+    "700": {
+      "value": "{color.slate.700}",
+      "type": "color"
+    },
+    "800": {
+      "value": "{color.slate.800}",
+      "type": "color"
+    },
+    "900": {
+      "value": "{color.slate.900}",
+      "type": "color",
+      "description": "Darkest neutral"
+    },
+    "950": {
+      "value": "{color.slate.950}",
+      "type": "color"
+    },
+    "1000": {
+      "value": "{color.black}",
+      "type": "color",
+      "description": "Pure black"
+    }
+  },
+  "interactive": {
+    "primary": {
+      "default": {
+        "value": "{brand.primary}",
+        "type": "color",
+        "description": "Primary interactive default state"
+      },
+      "hover": {
+        "value": "{color.blue.700}",
+        "type": "color",
+        "description": "Primary interactive hover state"
+      },
+      "active": {
+        "value": "{color.blue.800}",
+        "type": "color",
+        "description": "Primary interactive active/pressed state"
+      },
+      "disabled": {
+        "value": "{color.blue.300}",
+        "type": "color",
+        "description": "Primary interactive disabled state"
+      }
+    },
+    "secondary": {
+      "default": {
+        "value": "{brand.secondary}",
+        "type": "color"
+      },
+      "hover": {
+        "value": "{color.purple.700}",
+        "type": "color"
+      },
+      "active": {
+        "value": "{color.purple.800}",
+        "type": "color"
+      },
+      "disabled": {
+        "value": "{color.purple.300}",
+        "type": "color"
+      }
+    },
+    "danger": {
+      "default": {
+        "value": "{feedback.error}",
+        "type": "color"
+      },
+      "hover": {
+        "value": "{color.red.600}",
+        "type": "color"
+      },
+      "active": {
+        "value": "{color.red.700}",
+        "type": "color"
+      },
+      "disabled": {
+        "value": "{color.red.300}",
+        "type": "color"
+      }
+    }
+  },
+  "typography": {
+    "family": {
+      "body": {
+        "value": "{fontFamily.text}",
+        "type": "fontFamily",
+        "description": "Default body text font"
+      },
+      "heading": {
+        "value": "{fontFamily.text}",
+        "type": "fontFamily",
+        "description": "Heading font"
+      },
+      "code": {
+        "value": "{fontFamily.code}",
+        "type": "fontFamily",
+        "description": "Monospace font for code"
+      },
+      "emphasis": {
+        "value": "{fontFamily.emphasis}",
+        "type": "fontFamily",
+        "description": "Serif font for emphasis"
+      }
+    },
+    "weight": {
+      "light": {
+        "value": "{fontWeight.light}",
+        "type": "fontWeight",
+        "description": "Light weight for subtle text"
+      },
+      "regular": {
+        "value": "{fontWeight.normal}",
+        "type": "fontWeight",
+        "description": "Regular weight for body text"
+      },
+      "medium": {
+        "value": "{fontWeight.medium}",
+        "type": "fontWeight",
+        "description": "Medium weight for emphasis"
+      },
+      "semibold": {
+        "value": "{fontWeight.semibold}",
+        "type": "fontWeight",
+        "description": "Semibold weight for subheadings"
+      },
+      "bold": {
+        "value": "{fontWeight.bold}",
+        "type": "fontWeight",
+        "description": "Bold weight for headings"
+      }
+    },
+    "size": {
+      "caption": {
+        "value": "{fontSize.xs}",
+        "type": "dimension",
+        "description": "Caption/helper text size"
+      },
+      "body": {
+        "value": "{fontSize.base}",
+        "type": "dimension",
+        "description": "Default body text size"
+      },
+      "lead": {
+        "value": "{fontSize.lg}",
+        "type": "dimension",
+        "description": "Lead paragraph size"
+      },
+      "h6": {
+        "value": "{fontSize.lg}",
+        "type": "dimension"
+      },
+      "h5": {
+        "value": "{fontSize.xl}",
+        "type": "dimension"
+      },
+      "h4": {
+        "value": "{fontSize.2xl}",
+        "type": "dimension"
+      },
+      "h3": {
+        "value": "{fontSize.3xl}",
+        "type": "dimension"
+      },
+      "h2": {
+        "value": "{fontSize.4xl}",
+        "type": "dimension"
+      },
+      "h1": {
+        "value": "{fontSize.5xl}",
+        "type": "dimension"
+      },
+      "display": {
+        "value": "{fontSize.6xl}",
+        "type": "dimension",
+        "description": "Extra large display text"
+      }
+    },
+    "lineHeight": {
+      "tight": {
+        "value": "{lineHeight.sm}",
+        "type": "number",
+        "description": "Tight line height for headings"
+      },
+      "normal": {
+        "value": "{lineHeight.base}",
+        "type": "number",
+        "description": "Normal line height for body text"
+      },
+      "relaxed": {
+        "value": "{lineHeight.lg}",
+        "type": "number",
+        "description": "Relaxed line height for readability"
+      }
+    },
+    "letterSpacing": {
+      "tight": {
+        "value": "{letterSpacing.tight}",
+        "type": "dimension",
+        "description": "Tight letter spacing for headings"
+      },
+      "normal": {
+        "value": "{letterSpacing.normal}",
+        "type": "dimension",
+        "description": "Normal letter spacing"
+      },
+      "wide": {
+        "value": "{letterSpacing.wide}",
+        "type": "dimension",
+        "description": "Wide letter spacing for uppercase"
+      }
+    }
+  },
+  "spacing": {
+    "inset": {
+      "xs": {
+        "value": "{spacing.1}",
+        "type": "dimension",
+        "description": "Extra small inset padding"
+      },
+      "sm": {
+        "value": "{spacing.2}",
+        "type": "dimension",
+        "description": "Small inset padding"
+      },
+      "md": {
+        "value": "{spacing.4}",
+        "type": "dimension",
+        "description": "Medium inset padding"
+      },
+      "lg": {
+        "value": "{spacing.6}",
+        "type": "dimension",
+        "description": "Large inset padding"
+      },
+      "xl": {
+        "value": "{spacing.8}",
+        "type": "dimension",
+        "description": "Extra large inset padding"
+      }
+    },
+    "stack": {
+      "xs": {
+        "value": "{spacing.2}",
+        "type": "dimension",
+        "description": "Extra small vertical spacing"
+      },
+      "sm": {
+        "value": "{spacing.4}",
+        "type": "dimension",
+        "description": "Small vertical spacing"
+      },
+      "md": {
+        "value": "{spacing.6}",
+        "type": "dimension",
+        "description": "Medium vertical spacing"
+      },
+      "lg": {
+        "value": "{spacing.8}",
+        "type": "dimension",
+        "description": "Large vertical spacing"
+      },
+      "xl": {
+        "value": "{spacing.12}",
+        "type": "dimension",
+        "description": "Extra large vertical spacing"
+      }
+    },
+    "inline": {
+      "xs": {
+        "value": "{spacing.1}",
+        "type": "dimension",
+        "description": "Extra small horizontal spacing"
+      },
+      "sm": {
+        "value": "{spacing.2}",
+        "type": "dimension",
+        "description": "Small horizontal spacing"
+      },
+      "md": {
+        "value": "{spacing.4}",
+        "type": "dimension",
+        "description": "Medium horizontal spacing"
+      },
+      "lg": {
+        "value": "{spacing.6}",
+        "type": "dimension",
+        "description": "Large horizontal spacing"
+      },
+      "xl": {
+        "value": "{spacing.8}",
+        "type": "dimension",
+        "description": "Extra large horizontal spacing"
+      }
+    },
+    "section": {
+      "sm": {
+        "value": "{spacing.12}",
+        "type": "dimension",
+        "description": "Small section spacing"
+      },
+      "md": {
+        "value": "{spacing.16}",
+        "type": "dimension",
+        "description": "Medium section spacing"
+      },
+      "lg": {
+        "value": "{spacing.24}",
+        "type": "dimension",
+        "description": "Large section spacing"
+      },
+      "xl": {
+        "value": "{spacing.32}",
+        "type": "dimension",
+        "description": "Extra large section spacing"
+      }
+    }
+  },
+  "border": {
+    "radius": {
+      "none": {
+        "value": "{borderRadius.none}",
+        "type": "dimension",
+        "description": "No border radius"
+      },
+      "sm": {
+        "value": "{borderRadius.sm}",
+        "type": "dimension",
+        "description": "Small border radius"
+      },
+      "md": {
+        "value": "{borderRadius.md}",
+        "type": "dimension",
+        "description": "Medium border radius (default)"
+      },
+      "lg": {
+        "value": "{borderRadius.lg}",
+        "type": "dimension",
+        "description": "Large border radius"
+      },
+      "full": {
+        "value": "{borderRadius.full}",
+        "type": "dimension",
+        "description": "Fully rounded (pills, circles)"
+      }
+    },
+    "width": {
+      "none": {
+        "value": "{borderWidth.none}",
+        "type": "dimension"
+      },
+      "thin": {
+        "value": "{borderWidth.hairline}",
+        "type": "dimension",
+        "description": "Default border width"
+      },
+      "medium": {
+        "value": "{borderWidth.thin}",
+        "type": "dimension",
+        "description": "Medium border width"
+      },
+      "thick": {
+        "value": "{borderWidth.medium}",
+        "type": "dimension",
+        "description": "Thick border for emphasis"
+      }
+    }
+  },
+  "elevation": {
+    "none": {
+      "value": "{elevation.0}",
+      "type": "shadow",
+      "description": "No elevation"
+    },
+    "low": {
+      "value": "{elevation.1}",
+      "type": "shadow",
+      "description": "Low elevation for subtle depth"
+    },
+    "medium": {
+      "value": "{elevation.2}",
+      "type": "shadow",
+      "description": "Medium elevation for cards"
+    },
+    "high": {
+      "value": "{elevation.3}",
+      "type": "shadow",
+      "description": "High elevation for modals"
+    },
+    "highest": {
+      "value": "{elevation.4}",
+      "type": "shadow",
+      "description": "Highest elevation for popovers"
+    }
+  },
+  "opacity": {
+    "transparent": {
+      "value": "{opacity.0}",
+      "type": "number",
+      "description": "Fully transparent"
+    },
+    "disabled": {
+      "value": "{opacity.40}",
+      "type": "number",
+      "description": "Disabled state opacity"
+    },
+    "overlay": {
+      "value": "{opacity.80}",
+      "type": "number",
+      "description": "Overlay/backdrop opacity"
+    },
+    "opaque": {
+      "value": "{opacity.100}",
+      "type": "number",
+      "description": "Fully opaque"
+    }
+  },
+  "motion": {
+    "duration": {
+      "instant": {
+        "value": "{duration.instant}",
+        "type": "duration",
+        "description": "Instant transition"
+      },
+      "fast": {
+        "value": "{duration.fast}",
+        "type": "duration",
+        "description": "Fast transition for micro-interactions"
+      },
+      "normal": {
+        "value": "{duration.normal}",
+        "type": "duration",
+        "description": "Normal transition speed"
+      },
+      "slow": {
+        "value": "{duration.slow}",
+        "type": "duration",
+        "description": "Slow transition for emphasis"
+      }
+    },
+    "easing": {
+      "linear": {
+        "value": "{easing.linear}",
+        "type": "cubicBezier",
+        "description": "Linear motion"
+      },
+      "in": {
+        "value": "{easing.easeIn}",
+        "type": "cubicBezier",
+        "description": "Ease in for entering elements"
+      },
+      "out": {
+        "value": "{easing.easeOut}",
+        "type": "cubicBezier",
+        "description": "Ease out for exiting elements"
+      },
+      "inOut": {
+        "value": "{easing.easeInOut}",
+        "type": "cubicBezier",
+        "description": "Ease in-out for smooth transitions"
+      },
+      "emphasized": {
+        "value": "{easing.emphasized}",
+        "type": "cubicBezier",
+        "description": "Emphasized easing (Material Design)"
+      }
+    }
+  },
+  "layout": {
+    "breakpoint": {
+      "mobile": {
+        "value": "{breakpoint.sm}",
+        "type": "dimension",
+        "description": "Mobile breakpoint"
+      },
+      "tablet": {
+        "value": "{breakpoint.md}",
+        "type": "dimension",
+        "description": "Tablet breakpoint"
+      },
+      "desktop": {
+        "value": "{breakpoint.lg}",
+        "type": "dimension",
+        "description": "Desktop breakpoint"
+      },
+      "wide": {
+        "value": "{breakpoint.xl}",
+        "type": "dimension",
+        "description": "Wide desktop breakpoint"
+      }
+    },
+    "containerWidth": {
+      "narrow": {
+        "value": "{containerWidth.sm}",
+        "type": "dimension",
+        "description": "Narrow container for focused content"
+      },
+      "default": {
+        "value": "{containerWidth.lg}",
+        "type": "dimension",
+        "description": "Default container width"
+      },
+      "wide": {
+        "value": "{containerWidth.xl}",
+        "type": "dimension",
+        "description": "Wide container"
+      },
+      "full": {
+        "value": "{containerWidth.full}",
+        "type": "dimension",
+        "description": "Full width container"
+      }
+    }
+  },
+  "size": {
+    "icon": {
+      "sm": {
+        "value": "{iconSize.sm}",
+        "type": "dimension",
+        "description": "Small icon size"
+      },
+      "md": {
+        "value": "{iconSize.md}",
+        "type": "dimension",
+        "description": "Medium icon size (default)"
+      },
+      "lg": {
+        "value": "{iconSize.lg}",
+        "type": "dimension",
+        "description": "Large icon size"
+      },
+      "xl": {
+        "value": "{iconSize.xl}",
+        "type": "dimension",
+        "description": "Extra large icon size"
+      }
+    },
+    "avatar": {
+      "sm": {
+        "value": "{size.8}",
+        "type": "dimension",
+        "description": "Small avatar"
+      },
+      "md": {
+        "value": "{size.10}",
+        "type": "dimension",
+        "description": "Medium avatar"
+      },
+      "lg": {
+        "value": "{size.12}",
+        "type": "dimension",
+        "description": "Large avatar"
+      },
+      "xl": {
+        "value": "{size.16}",
+        "type": "dimension",
+        "description": "Extra large avatar"
+      }
+    }
+  }
+}
