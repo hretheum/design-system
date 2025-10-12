@@ -21,7 +21,9 @@
     "generate:quick": "node scripts/quick-generate.js",
     "merge-tokens": "node scripts/merge-tokens.js",
     "tokens:validate": "node scripts/validate-tokens.js",
-    "tokens:backup": "cp component.json component.json.backup && cp functional.json functional.json.backup"
+    "tokens:audit": "node scripts/audit-token-references.js",
+    "tokens:backup": "cp component.json component.json.backup && cp functional.json functional.json.backup",
+    "tokens:check": "npm run tokens:validate && npm run tokens:audit"
   },
   "keywords": [
     "design-system",

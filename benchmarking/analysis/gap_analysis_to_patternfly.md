@@ -23,10 +23,22 @@
 | Theme | ~60 | Light/Dark/HC | ✅ Complete |
 | **TOTAL** | **~2,590** | | **46% complete** |
 
-### 🎨 Figma Token Synchronization
+### 🎨 Figma Token Synchronization & Audit
 **Files to update**: `component.json`, `functional.json`
-**Tool**: Run `npm run merge-tokens` after each component batch
-**Validation**: W3C Design Token Format compliance required
+**Tools**: 
+- `npm run merge-tokens` - Merge new tokens into main files
+- `npm run tokens:audit` - **CRITICAL: Audit reference consistency across all layers**
+- `npm run tokens:validate` - Validate W3C compliance
+- `npm run tokens:check` - Run both validation and audit
+
+**Audit Process**:
+1. After adding tokens, run audit to detect:
+   - Broken references between layers
+   - Circular dependencies  
+   - Hierarchy violations (e.g., primitives referencing semantic)
+   - Missing token definitions
+2. Fix all errors before proceeding
+3. Validate W3C Design Token Format compliance
 
 ### Current Components (44)
 Organized by functional categories:
@@ -246,13 +258,15 @@ Organized by functional categories:
 - [x] Implement 20 Priority 1 components ✅
 - [x] Add 400 component tokens ✅
 - [x] **Update Figma token files (component.json, functional.json)** ✅
+- [x] **Audit token reference consistency across all layers** ✅
 - [x] Create Storybook stories ✅
-- [ ] Write interaction tests
+- [x] Write interaction tests ✅
 
 ### Phase 3: Essential Components (Months 5-6)
 - [ ] Implement 25 Priority 2 components
 - [ ] Add 600 component tokens
 - [ ] **Update Figma token files with new components**
+- [ ] **Run token reference audit and fix broken references**
 - [ ] Enhance pattern library
 - [ ] Add visual regression tests
 
@@ -260,6 +274,7 @@ Organized by functional categories:
 - [ ] Implement 27 Priority 3 components
 - [ ] Add 800 component tokens
 - [ ] **Update Figma token files with new components**
+- [ ] **Run token reference audit and fix broken references**
 - [ ] Create enterprise patterns
 - [ ] Complete documentation
 
@@ -267,6 +282,7 @@ Organized by functional categories:
 - [ ] Performance optimization
 - [ ] Bundle size reduction
 - [ ] A11y audit & fixes
+- [ ] **Final comprehensive token audit**
 - [ ] Design system versioning
 
 ---
@@ -287,6 +303,9 @@ Organized by functional categories:
 ☐ **UPDATE FIGMA TOKEN FILES (component.json, functional.json)**
 ☐ **Run merge-tokens.js script to consolidate tokens**
 ☐ **Verify W3C Design Token Format compliance**
+☐ **AUDIT TOKEN REFERENCES - Run full cross-layer validation**
+☐ **Fix any broken references between token layers**
+☐ **Ensure hierarchical integrity (primitives → semantic → functional → component)**
 
 ### Development
 ☐ Create component structure
@@ -332,8 +351,10 @@ Organized by functional categories:
 
 ## 🚀 Quick Wins (Next 30 Days)
 
-1. **⚠️ ALWAYS UPDATE FIGMA TOKEN FILES**
+1. **⚠️ ALWAYS UPDATE & AUDIT TOKEN FILES**
    - Run `npm run merge-tokens` after adding components
+   - **Run `npm run tokens:audit` to check reference consistency**
+   - Fix any broken references before proceeding
    - Verify component.json and functional.json are updated
    - Test with Figma Tokens plugin import
 

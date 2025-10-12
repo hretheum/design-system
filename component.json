@@ -501,7 +501,7 @@
       "content": {
         "flex": {
           "value": "1",
-          "type": "other"
+          "type": "string"
         },
         "padding": {
           "value": "{spacing.8}",
@@ -1397,12 +1397,12 @@
       "focus": {
         "trap": {
           "value": "true",
-          "type": "other",
+          "type": "string",
           "description": "Must trap focus for a11y"
         },
         "returnTo": {
           "value": "trigger",
-          "type": "other",
+          "type": "string",
           "description": "Return focus to trigger on close"
         }
       }
@@ -1411,11 +1411,11 @@
       "position": {
         "hidden": {
           "value": "-9999px",
-          "type": "other"
+          "type": "string"
         },
         "visible": {
           "value": "0",
-          "type": "other"
+          "type": "string"
         }
       },
       "zIndex": {

@@ -447,27 +447,27 @@
   "elevation": {
     "none": {
       "value": "{elevation.0}",
-      "type": "shadow",
+      "type": "string",
       "description": "No elevation"
     },
     "low": {
       "value": "{elevation.1}",
-      "type": "shadow",
+      "type": "string",
       "description": "Low elevation for subtle depth"
     },
     "medium": {
       "value": "{elevation.2}",
-      "type": "shadow",
+      "type": "string",
       "description": "Medium elevation for cards"
     },
     "high": {
       "value": "{elevation.3}",
-      "type": "shadow",
+      "type": "string",
       "description": "High elevation for modals"
     },
     "highest": {
       "value": "{elevation.4}",
-      "type": "shadow",
+      "type": "string",
       "description": "Highest elevation for popovers"
     }
   },
@@ -739,12 +739,12 @@
     "gradient": {
       "hero": {
         "value": "{gradient.primary}",
-        "type": "gradient",
+        "type": "string",
         "description": "Hero section gradient"
       },
       "accent": {
         "value": "{gradient.warm}",
-        "type": "gradient",
+        "type": "string",
         "description": "Accent gradient for CTAs"
       }
     },
@@ -1083,41 +1083,93 @@
   "accessible": {
     "text": {
       "highContrast": {
-        "onLight": { "value": "{color.slate.950}", "type": "color", "description": "Maximum contrast on light backgrounds" },
-        "onDark": { "value": "{color.white}", "type": "color", "description": "Maximum contrast on dark backgrounds" }
+        "onLight": {
+          "value": "{color.slate.950}",
+          "type": "color",
+          "description": "Maximum contrast on light backgrounds"
+        },
+        "onDark": {
+          "value": "{color.white}",
+          "type": "color",
+          "description": "Maximum contrast on dark backgrounds"
+        }
       }
     },
     "focus": {
       "ring": {
-        "color": { "value": "{color.blue.600}", "type": "color" },
-        "width": { "value": "2px", "type": "dimension" },
-        "offset": { "value": "2px", "type": "dimension" }
+        "color": {
+          "value": "{color.blue.600}",
+          "type": "color"
+        },
+        "width": {
+          "value": "2px",
+          "type": "dimension"
+        },
+        "offset": {
+          "value": "2px",
+          "type": "dimension"
+        }
       },
       "keyboard": {
-        "color": { "value": "{color.cyan.500}", "type": "color", "description": "Keyboard-only focus indicator" },
-        "width": { "value": "3px", "type": "dimension" }
+        "color": {
+          "value": "{color.cyan.500}",
+          "type": "color",
+          "description": "Keyboard-only focus indicator"
+        },
+        "width": {
+          "value": "3px",
+          "type": "dimension"
+        }
       }
     },
     "targetSize": {
       "minimum": {
-        "mobile": { "value": "44px", "type": "dimension", "description": "WCAG mobile minimum touch target" },
-        "desktop": { "value": "24px", "type": "dimension", "description": "WCAG desktop minimum target" }
+        "mobile": {
+          "value": "44px",
+          "type": "dimension",
+          "description": "WCAG mobile minimum touch target"
+        },
+        "desktop": {
+          "value": "24px",
+          "type": "dimension",
+          "description": "WCAG desktop minimum target"
+        }
       }
     },
     "link": {
       "underline": {
-        "thickness": { "value": "1px", "type": "dimension", "description": "Default underline thickness" }
+        "thickness": {
+          "value": "1px",
+          "type": "dimension",
+          "description": "Default underline thickness"
+        }
       }
     },
     "skipLink": {
       "position": {
-        "hidden": { "value": "-9999px", "type": "dimension", "description": "Hidden skip link position" },
-        "visible": { "value": "0", "type": "dimension", "description": "Visible skip link position" }
+        "hidden": {
+          "value": "-9999px",
+          "type": "dimension",
+          "description": "Hidden skip link position"
+        },
+        "visible": {
+          "value": "0",
+          "type": "dimension",
+          "description": "Visible skip link position"
+        }
       },
-      "zIndex": { "value": "9999", "type": "number", "description": "Skip link z-index" }
+      "zIndex": {
+        "value": "9999",
+        "type": "number",
+        "description": "Skip link z-index"
+      }
     },
     "touch": {
-      "minimum": { "value": "44px", "type": "dimension", "description": "WCAG minimum touch target" }
+      "minimum": {
+        "value": "44px",
+        "type": "dimension",
+        "description": "WCAG minimum touch target"
+      }
     }
   }
 }

@@ -312,11 +312,11 @@
     "elevation": {
       "default": {
         "value": "{elevation.low}",
-        "type": "shadow"
+        "type": "string"
       },
       "raised": {
         "value": "{elevation.medium}",
-        "type": "shadow"
+        "type": "string"
       }
     },
     "spacing": {
@@ -373,7 +373,7 @@
     },
     "elevation": {
       "value": "{elevation.low}",
-      "type": "shadow"
+      "type": "string"
     },
     "bar": {
       "height": {
@@ -467,7 +467,7 @@
     },
     "elevation": {
       "value": "{elevation.highest}",
-      "type": "shadow"
+      "type": "string"
     },
     "spacing": {
       "padding": {
@@ -513,7 +513,7 @@
     },
     "elevation": {
       "value": "{elevation.high}",
-      "type": "shadow"
+      "type": "string"
     }
   },
   "tooltip": {
@@ -531,7 +531,7 @@
     },
     "elevation": {
       "value": "{elevation.high}",
-      "type": "shadow"
+      "type": "string"
     },
     "spacing": {
       "paddingX": {
@@ -959,7 +959,7 @@
     },
     "elevation": {
       "value": "{elevation.highest}",
-      "type": "shadow"
+      "type": "string"
     }
   },
   "sidebar": {
@@ -993,7 +993,7 @@
     },
     "elevation": {
       "value": "{elevation.low}",
-      "type": "shadow"
+      "type": "string"
     },
     "height": {
       "value": "{size.16}",
@@ -1223,7 +1223,7 @@
     },
     "elevation": {
       "value": "{elevation.medium}",
-      "type": "shadow"
+      "type": "string"
     }
   },
   "accordion": {
@@ -1365,7 +1365,7 @@
     },
     "elevation": {
       "value": "{elevation.high}",
-      "type": "shadow"
+      "type": "string"
     }
   },
   "drawer": {
@@ -1381,7 +1381,7 @@
     },
     "elevation": {
       "value": "{elevation.highest}",
-      "type": "shadow"
+      "type": "string"
     }
   },
   "snackbar": {
@@ -1696,7 +1696,7 @@
       },
       "borderStyle": {
         "value": "dashed",
-        "type": "other"
+        "type": "string"
       }
     },
     "text": {
@@ -2001,7 +2001,7 @@
     },
     "elevation": {
       "value": "{elevation.high}",
-      "type": "shadow"
+      "type": "string"
     }
   },
   "menubar": {
@@ -2043,7 +2043,7 @@
     },
     "elevation": {
       "value": "{elevation.low}",
-      "type": "shadow"
+      "type": "string"
     },
     "height": {
       "value": "{size.16}",
@@ -2095,7 +2095,7 @@
     },
     "elevation": {
       "value": "{elevation.low}",
-      "type": "shadow"
+      "type": "string"
     }
   },
   "emptyState": {
@@ -2350,7 +2350,7 @@
       },
       "elevation": {
         "value": "{elevation.low}",
-        "type": "shadow"
+        "type": "string"
       }
     }
   },
@@ -2391,7 +2391,7 @@
     },
     "elevation": {
       "value": "{elevation.highest}",
-      "type": "shadow"
+      "type": "string"
     },
     "borderRadius": {
       "value": "{border.radius.full}",
@@ -2438,7 +2438,7 @@
       },
       "elevation": {
         "value": "{elevation.high}",
-        "type": "shadow"
+        "type": "string"
       }
     }
   },

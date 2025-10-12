@@ -1,0 +1,14 @@
+{
+  "timestamp": "2025-10-12T21:28:07.931Z",
+  "summary": {
+    "totalTokens": 1620,
+    "totalReferences": 976,
+    "checkedReferences": 976,
+    "totalErrors": 0,
+    "totalWarnings": 0
+  },
+  "errors": [],
+  "warnings": [],
+  "circularReferences": [],
+  "hierarchyViolations": []
+}

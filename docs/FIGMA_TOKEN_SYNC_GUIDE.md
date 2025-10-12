@@ -68,6 +68,8 @@ npm run merge-tokens
 
 ### After Development
 - [ ] Run `npm run merge-tokens` to update main files
+- [ ] **Run `npm run tokens:audit` to check reference consistency**
+- [ ] Fix any broken references found in audit report
 - [ ] Verify token count increased as expected
 - [ ] Test token references work correctly
 - [ ] Create backup before major changes
