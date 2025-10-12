@@ -16,6 +16,12 @@ npm install
 # Run Storybook (with hot reload)
 npm run storybook
 
+# Generate new component (interactive)
+npm run generate
+
+# Generate new component (quick)
+npm run generate:quick -- ComponentName category
+
 # Run all tests
 npm test
 
@@ -78,9 +84,30 @@ npm run test:storybook     # Component interaction tests
 
 ---
 
+## 🎨 Component Generator
+
+Create new components instantly with our automated generator:
+
+### Interactive Mode
+```bash
+npm run generate
+```
+Guided process with category selection, props configuration, and full documentation.
+
+### Quick Mode
+```bash
+npm run generate:quick -- Button actions
+npm run generate:quick -- Card containers
+npm run generate:quick -- Alert feedback
+```
+
+**📖 Full Documentation**: [Generator Guide](./docs/GENERATOR_GUIDE.md) | [Cheatsheet](./docs/GENERATOR_CHEATSHEET.md)
+
+---
+
 ## 📚 Storybook Documentation
 
-**23 interactive stories** across **6 categories**:
+**26 interactive stories** across **12 functional categories**:
 
 - **Forms** (6): Input, Checkbox, Radio, Switch, Select, Textarea
 - **Feedback** (5): Alert, Toast, Badge, ProgressBar, Spinner

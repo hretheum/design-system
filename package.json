@@ -15,7 +15,10 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint": "eslint .",
-    "format": "prettier --write \"**/*.{js,json,md}\""
+    "format": "prettier --write \"**/*.{js,json,md}\"",
+    "generate": "node scripts/generate-component.js",
+    "generate:component": "node scripts/generate-component.js",
+    "generate:quick": "node scripts/quick-generate.js"
   },
   "keywords": [
     "design-system",
@@ -34,16 +37,19 @@
     "@storybook/react-vite": "^9.1.10",
     "@storybook/test": "^9.0.0-alpha.2",
     "@storybook/test-runner": "^0.23.0",
+    "chalk": "^5.6.2",
     "concurrently": "^9.2.1",
     "eslint": "^8.55.0",
+    "handlebars": "^4.7.8",
     "http-server": "^14.1.1",
+    "inquirer": "^12.9.6",
+    "ora": "^9.0.0",
     "prettier": "^3.1.0",
     "storybook": "^9.1.10",
     "vite": "^5.0.0",
     "wait-on": "^9.0.1"
   },
   "dependencies": {
-    "chalk": "^5.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

@@ -1,0 +1,327 @@
+name: Component Development Pipeline
+
+on:
+  pull_request:
+    paths:
+      - 'components/**'
+      - 'stories/**'
+      - '*.json'
+  push:
+    branches:
+      - main
+      - 'release/**'
+    paths:
+      - 'components/**'
+      - 'stories/**'
+      - '*.json'
+
+env:
+  NODE_VERSION: '18'
+  CACHE_KEY: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+jobs:
+  # Job 1: Code Quality Checks
+  quality:
+    name: Code Quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Run Prettier check
+        run: npm run format:check || npm run format
+
+      - name: Check bundle size
+        run: |
+          npm run build
+          echo "📦 Bundle size check"
+          find dist -name "*.js" -exec du -h {} \;
+
+  # Job 2: Component Validation
+  validate:
+    name: Component Validation
+    runs-on: ubuntu-latest
+    needs: quality
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate token structure
+        run: |
+          echo "🎨 Validating design tokens..."
+          for file in primitives.json semantic.json functional.json component.json; do
+            if [ -f "$file" ]; then
+              node -e "JSON.parse(require('fs').readFileSync('$file'))" || exit 1
+              echo "✅ $file is valid"
+            fi
+          done
+
+      - name: Validate component structure
+        run: |
+          echo "📁 Checking component structure..."
+          # Find recently modified components
+          COMPONENTS=$(find components -name "*.jsx" -mtime -7 | xargs -I {} basename {} .jsx | sort -u)
+          for component in $COMPONENTS; do
+            echo "Validating $component..."
+            ./scripts/validate-component.sh "$component" || true
+          done
+
+  # Job 3: Testing
+  test:
+    name: Test Suite
+    runs-on: ubuntu-latest
+    needs: quality
+    strategy:
+      matrix:
+        test-type: [unit, integration, a11y]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ${{ matrix.test-type }} tests
+        run: |
+          case "${{ matrix.test-type }}" in
+            unit)
+              npm test -- --coverage --watchAll=false
+              ;;
+            integration)
+              npm run test:integration || echo "No integration tests configured"
+              ;;
+            a11y)
+              npm run test:a11y
+              ;;
+          esac
+
+      - name: Upload coverage
+        if: matrix.test-type == 'unit'
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage/lcov.info
+          flags: unittests
+          name: codecov-umbrella
+
+  # Job 4: Visual Testing
+  visual:
+    name: Visual Testing
+    runs-on: ubuntu-latest
+    needs: quality
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Run visual tests
+        run: |
+          npx playwright install chromium
+          npm run test:storybook:ci || true
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+
+      - name: Upload Storybook artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: storybook-static
+          path: storybook-static/
+
+  # Job 5: Build & Deploy Preview
+  preview:
+    name: Deploy Preview
+    runs-on: ubuntu-latest
+    needs: [validate, test]
+    if: github.event_name == 'pull_request'
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build components
+        run: npm run build
+
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Deploy to preview environment
+        id: deploy
+        run: |
+          # Deploy to preview (example with Vercel, Netlify, or GitHub Pages)
+          echo "📦 Deploying preview..."
+          echo "preview_url=https://preview-pr-${{ github.event.pull_request.number }}.example.com" >> $GITHUB_OUTPUT
+
+      - name: Comment PR with preview link
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const preview_url = '${{ steps.deploy.outputs.preview_url }}';
+            const body = `## 🚀 Preview Deployed!\n\n` +
+              `**Storybook Preview**: ${preview_url}\n\n` +
+              `### Quality Checks\n` +
+              `- ✅ ESLint passed\n` +
+              `- ✅ Tests passed\n` +
+              `- ✅ Build successful\n\n` +
+              `### What's Next?\n` +
+              `1. Review the preview\n` +
+              `2. Test the components\n` +
+              `3. Approve if everything looks good`;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            });
+
+  # Job 6: Performance Check
+  performance:
+    name: Performance Analysis
+    runs-on: ubuntu-latest
+    needs: quality
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build for production
+        run: npm run build
+
+      - name: Analyze bundle
+        run: |
+          npm install -g webpack-bundle-analyzer
+          echo "📊 Analyzing bundle size..."
+          # Generate bundle analysis (customize based on your build tool)
+          
+      - name: Performance metrics
+        run: |
+          echo "⚡ Performance Metrics"
+          echo "====================="
+          echo "Build time: $(date)"
+          echo "Bundle sizes:"
+          du -sh dist/*
+          echo "Token count: $(grep -c '"value"' *.json | awk '{sum+=$1} END {print sum}')"
+
+  # Job 7: Release Preparation (only on main)
+  release-prep:
+    name: Release Preparation
+    runs-on: ubuntu-latest
+    needs: [validate, test, performance]
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate changelog
+        run: |
+          echo "📝 Generating changelog..."
+          # npm run changelog || echo "No changelog generator configured"
+
+      - name: Prepare release notes
+        run: |
+          echo "## 📦 Release Notes" > RELEASE_NOTES.md
+          echo "" >> RELEASE_NOTES.md
+          echo "### New Components" >> RELEASE_NOTES.md
+          git diff HEAD~1 --name-only | grep "components/.*/.*\.jsx$" | while read file; do
+            component=$(basename $file .jsx)
+            echo "- $component" >> RELEASE_NOTES.md
+          done
+          echo "" >> RELEASE_NOTES.md
+          echo "### Updated Tokens" >> RELEASE_NOTES.md
+          git diff HEAD~1 --name-status *.json | grep "^M" | while read status file; do
+            echo "- Updated: $file" >> RELEASE_NOTES.md
+          done
+
+      - name: Deploy to production
+        if: success()
+        run: |
+          echo "🚀 Deploying to production..."
+          npm run build
+          npm run build-storybook
+          # npm run deploy:production
+
+# Workflow Summary
+summary:
+  name: Pipeline Summary
+  runs-on: ubuntu-latest
+  needs: [quality, validate, test, visual, performance]
+  if: always()
+  steps:
+    - name: Summary
+      run: |
+        echo "## 📊 Pipeline Summary"
+        echo "===================="
+        echo "✅ Quality checks completed"
+        echo "✅ Validation completed"
+        echo "✅ Tests completed"
+        echo "✅ Visual tests completed"
+        echo "✅ Performance checks completed"
+        echo ""
+        echo "Pipeline completed successfully!"

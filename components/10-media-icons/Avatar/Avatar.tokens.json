@@ -1,0 +1,55 @@
+{
+  "avatar": {
+    "size": {
+      "xs": {
+        "width": { "value": "{size.6}", "type": "dimension" },
+        "height": { "value": "{size.6}", "type": "dimension" },
+        "fontSize": { "value": "{fontSize.xs}", "type": "dimension" }
+      },
+      "sm": {
+        "width": { "value": "{size.8}", "type": "dimension" },
+        "height": { "value": "{size.8}", "type": "dimension" },
+        "fontSize": { "value": "{fontSize.sm}", "type": "dimension" }
+      },
+      "md": {
+        "width": { "value": "{size.10}", "type": "dimension" },
+        "height": { "value": "{size.10}", "type": "dimension" },
+        "fontSize": { "value": "{fontSize.base}", "type": "dimension" }
+      },
+      "lg": {
+        "width": { "value": "{size.12}", "type": "dimension" },
+        "height": { "value": "{size.12}", "type": "dimension" },
+        "fontSize": { "value": "{fontSize.lg}", "type": "dimension" }
+      },
+      "xl": {
+        "width": { "value": "{size.16}", "type": "dimension" },
+        "height": { "value": "{size.16}", "type": "dimension" },
+        "fontSize": { "value": "{fontSize.xl}", "type": "dimension" }
+      }
+    },
+    "variant": {
+      "circle": {
+        "borderRadius": { "value": "{borderRadius.full}", "type": "dimension" }
+      },
+      "square": {
+        "borderRadius": { "value": "{borderRadius.none}", "type": "dimension" }
+      },
+      "rounded": {
+        "borderRadius": { "value": "{borderRadius.lg}", "type": "dimension" }
+      }
+    },
+    "status": {
+      "size": { "value": "25%", "type": "dimension" },
+      "position": {
+        "bottom": { "value": "0", "type": "dimension" },
+        "right": { "value": "0", "type": "dimension" }
+      },
+      "colors": {
+        "online": { "value": "{color.green.500}", "type": "color" },
+        "offline": { "value": "{color.gray.400}", "type": "color" },
+        "busy": { "value": "{color.red.500}", "type": "color" },
+        "away": { "value": "{color.amber.500}", "type": "color" }
+      }
+    }
+  }
+}
