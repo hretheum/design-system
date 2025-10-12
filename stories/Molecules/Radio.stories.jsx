@@ -65,10 +65,22 @@ const Radio = ({ label, value, checked, onChange, disabled, name, error, ...prop
   );
 };
 
-const RadioGroup = ({ options, value, onChange, disabled, error, direction = 'vertical' }) => {
+const RadioGroup = ({ label, options, value, onChange, disabled, error, direction = 'vertical' }) => {
+  const groupId = `radio-group-${Math.random().toString(36).substr(2, 9)}`;
+  const labelId = label ? `${groupId}-label` : undefined;
+  
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-      <div role="radiogroup" style={{
+      {label && (
+        <span id={labelId} style={{
+          fontSize: 'var(--font-size-base)',
+          fontWeight: 500,
+          color: 'var(--content-primary)',
+        }}>
+          {label}
+        </span>
+      )}
+      <div role="radiogroup" aria-labelledby={labelId} style={{
         display: 'flex',
         flexDirection: direction === 'vertical' ? 'column' : 'row',
         gap: direction === 'vertical' ? '0.5rem' : '1.5rem',
