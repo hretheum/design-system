@@ -227,14 +227,16 @@ export const DisabledGroup = {
  * Interaction Test - Tests radio accessibility and rendering
  */
 export const RadioTest = {
-  args: {
-    label: 'Payment Method',
-    options: [
-      { label: 'Credit Card', value: 'card' },
-      { label: 'PayPal', value: 'paypal' },
-      { label: 'Bank Transfer', value: 'bank' },
-    ],
-  },
+  render: () => (
+    <RadioGroup
+      label="Payment Method"
+      options={[
+        { label: 'Credit Card', value: 'card' },
+        { label: 'PayPal', value: 'paypal' },
+        { label: 'Bank Transfer', value: 'bank' },
+      ]}
+    />
+  ),
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     
