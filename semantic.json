@@ -635,5 +635,449 @@
         "description": "Extra large avatar"
       }
     }
+  },
+  "surface": {
+    "default": {
+      "value": "{neutral.0}",
+      "type": "color",
+      "description": "Default surface (white in light mode)"
+    },
+    "raised": {
+      "value": "{neutral.50}",
+      "type": "color",
+      "description": "Raised surface (slightly elevated)"
+    },
+    "overlay": {
+      "value": "{neutral.900}",
+      "type": "color",
+      "description": "Overlay surface for modals/dialogs backdrop"
+    },
+    "subdued": {
+      "value": "{neutral.100}",
+      "type": "color",
+      "description": "Subdued surface for less emphasis"
+    },
+    "disabled": {
+      "value": "{neutral.200}",
+      "type": "color",
+      "description": "Disabled surface state"
+    },
+    "inverse": {
+      "value": "{neutral.900}",
+      "type": "color",
+      "description": "Inverse surface (dark in light mode)"
+    }
+  },
+  "content": {
+    "primary": {
+      "value": "{neutral.900}",
+      "type": "color",
+      "description": "Primary text color (highest emphasis)"
+    },
+    "secondary": {
+      "value": "{neutral.600}",
+      "type": "color",
+      "description": "Secondary text color (medium emphasis)"
+    },
+    "tertiary": {
+      "value": "{neutral.500}",
+      "type": "color",
+      "description": "Tertiary text color (low emphasis)"
+    },
+    "disabled": {
+      "value": "{neutral.400}",
+      "type": "color",
+      "description": "Disabled text color"
+    },
+    "inverse": {
+      "value": "{neutral.0}",
+      "type": "color",
+      "description": "Inverse text (white on dark backgrounds)"
+    },
+    "link": {
+      "value": "{brand.primary}",
+      "type": "color",
+      "description": "Link text color"
+    },
+    "onPrimary": {
+      "value": "{neutral.0}",
+      "type": "color",
+      "description": "Text on primary brand color"
+    },
+    "onSuccess": {
+      "value": "{color.green.900}",
+      "type": "color",
+      "description": "Text on success background"
+    },
+    "onWarning": {
+      "value": "{color.amber.900}",
+      "type": "color",
+      "description": "Text on warning background"
+    },
+    "onError": {
+      "value": "{color.red.900}",
+      "type": "color",
+      "description": "Text on error background"
+    }
+  },
+  "decorative": {
+    "accent1": {
+      "value": "{color.purple.500}",
+      "type": "color",
+      "description": "First decorative accent"
+    },
+    "accent2": {
+      "value": "{color.pink.500}",
+      "type": "color",
+      "description": "Second decorative accent"
+    },
+    "accent3": {
+      "value": "{color.cyan.500}",
+      "type": "color",
+      "description": "Third decorative accent"
+    },
+    "gradient": {
+      "hero": {
+        "value": "{gradient.primary}",
+        "type": "gradient",
+        "description": "Hero section gradient"
+      },
+      "accent": {
+        "value": "{gradient.warm}",
+        "type": "gradient",
+        "description": "Accent gradient for CTAs"
+      }
+    },
+    "illustration": {
+      "primary": {
+        "value": "{color.indigo.400}",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "{color.violet.400}",
+        "type": "color"
+      }
+    }
+  },
+  "dataVisualization": {
+    "categorical": {
+      "1": {
+        "value": "{color.blue.500}",
+        "type": "color"
+      },
+      "2": {
+        "value": "{color.purple.500}",
+        "type": "color"
+      },
+      "3": {
+        "value": "{color.cyan.500}",
+        "type": "color"
+      },
+      "4": {
+        "value": "{color.pink.500}",
+        "type": "color"
+      },
+      "5": {
+        "value": "{color.amber.500}",
+        "type": "color"
+      },
+      "6": {
+        "value": "{color.teal.500}",
+        "type": "color"
+      },
+      "7": {
+        "value": "{color.orange.500}",
+        "type": "color"
+      },
+      "8": {
+        "value": "{color.indigo.500}",
+        "type": "color"
+      }
+    },
+    "sequential": {
+      "1": {
+        "value": "{color.blue.100}",
+        "type": "color"
+      },
+      "2": {
+        "value": "{color.blue.300}",
+        "type": "color"
+      },
+      "3": {
+        "value": "{color.blue.500}",
+        "type": "color"
+      },
+      "4": {
+        "value": "{color.blue.700}",
+        "type": "color"
+      },
+      "5": {
+        "value": "{color.blue.900}",
+        "type": "color"
+      }
+    },
+    "diverging": {
+      "negative": {
+        "value": "{color.red.500}",
+        "type": "color"
+      },
+      "neutral": {
+        "value": "{neutral.300}",
+        "type": "color"
+      },
+      "positive": {
+        "value": "{color.green.500}",
+        "type": "color"
+      }
+    },
+    "comparison": {
+      "current": {
+        "value": "{brand.primary}",
+        "type": "color"
+      },
+      "previous": {
+        "value": "{neutral.400}",
+        "type": "color"
+      },
+      "target": {
+        "value": "{feedback.success}",
+        "type": "color"
+      }
+    }
+  },
+  "focus": {
+    "ring": {
+      "color": {
+        "value": "{brand.primary}",
+        "type": "color",
+        "description": "Focus ring color"
+      },
+      "width": {
+        "value": "{borderWidth.thin}",
+        "type": "dimension",
+        "description": "Focus ring width"
+      },
+      "offset": {
+        "value": "{spacing.0-5}",
+        "type": "dimension",
+        "description": "Focus ring offset from element"
+      }
+    },
+    "outline": {
+      "color": {
+        "value": "{color.blue.600}",
+        "type": "color"
+      },
+      "width": {
+        "value": "{borderWidth.medium}",
+        "type": "dimension"
+      }
+    },
+    "keyboard": {
+      "color": {
+        "value": "{brand.accent}",
+        "type": "color",
+        "description": "Keyboard-only focus indicator"
+      }
+    }
+  },
+  "selection": {
+    "background": {
+      "value": "{color.blue.100}",
+      "type": "color",
+      "description": "Background for selected items"
+    },
+    "text": {
+      "value": "{color.blue.900}",
+      "type": "color",
+      "description": "Text color for selected items"
+    },
+    "border": {
+      "value": "{brand.primary}",
+      "type": "color",
+      "description": "Border color for selected items"
+    },
+    "highlight": {
+      "value": "{color.yellow.200}",
+      "type": "color",
+      "description": "Text highlight background"
+    }
+  },
+  "divider": {
+    "default": {
+      "value": "{neutral.200}",
+      "type": "color",
+      "description": "Default divider color"
+    },
+    "strong": {
+      "value": "{neutral.400}",
+      "type": "color",
+      "description": "Strong/emphasized divider"
+    },
+    "subtle": {
+      "value": "{neutral.100}",
+      "type": "color",
+      "description": "Subtle/light divider"
+    },
+    "inverse": {
+      "value": "{neutral.700}",
+      "type": "color",
+      "description": "Divider on dark backgrounds"
+    }
+  },
+  "backdrop": {
+    "opacity": {
+      "light": {
+        "value": "{opacity.40}",
+        "type": "number",
+        "description": "Light backdrop opacity"
+      },
+      "medium": {
+        "value": "{opacity.60}",
+        "type": "number",
+        "description": "Medium backdrop opacity"
+      },
+      "heavy": {
+        "value": "{opacity.80}",
+        "type": "number",
+        "description": "Heavy backdrop opacity"
+      }
+    },
+    "blur": {
+      "light": {
+        "value": "{blur.sm}",
+        "type": "dimension",
+        "description": "Light backdrop blur"
+      },
+      "medium": {
+        "value": "{blur.md}",
+        "type": "dimension",
+        "description": "Medium backdrop blur"
+      },
+      "heavy": {
+        "value": "{blur.lg}",
+        "type": "dimension",
+        "description": "Heavy backdrop blur"
+      }
+    }
+  },
+  "transition": {
+    "fade": {
+      "duration": {
+        "value": "{motion.duration.normal}",
+        "type": "duration"
+      },
+      "easing": {
+        "value": "{motion.easing.inOut}",
+        "type": "cubicBezier"
+      }
+    },
+    "slideIn": {
+      "duration": {
+        "value": "{motion.duration.normal}",
+        "type": "duration"
+      },
+      "easing": {
+        "value": "{motion.easing.out}",
+        "type": "cubicBezier"
+      }
+    },
+    "slideOut": {
+      "duration": {
+        "value": "{motion.duration.fast}",
+        "type": "duration"
+      },
+      "easing": {
+        "value": "{motion.easing.in}",
+        "type": "cubicBezier"
+      }
+    },
+    "scale": {
+      "duration": {
+        "value": "{motion.duration.fast}",
+        "type": "duration"
+      },
+      "easing": {
+        "value": "{motion.easing.emphasized}",
+        "type": "cubicBezier"
+      }
+    }
+  },
+  "device": {
+    "mobile": {
+      "min": {
+        "value": "{breakpoint.xs}",
+        "type": "dimension"
+      },
+      "max": {
+        "value": "639px",
+        "type": "dimension"
+      }
+    },
+    "tablet": {
+      "min": {
+        "value": "{layout.breakpoint.tablet}",
+        "type": "dimension"
+      },
+      "max": {
+        "value": "1023px",
+        "type": "dimension"
+      }
+    },
+    "desktop": {
+      "min": {
+        "value": "{layout.breakpoint.desktop}",
+        "type": "dimension"
+      }
+    }
+  },
+  "layer": {
+    "base": {
+      "value": "{zIndex.base}",
+      "type": "number",
+      "description": "Base layer"
+    },
+    "navigation": {
+      "value": "{zIndex.sticky}",
+      "type": "number",
+      "description": "Sticky navigation"
+    },
+    "dropdown": {
+      "value": "{zIndex.dropdown}",
+      "type": "number",
+      "description": "Dropdown menus"
+    },
+    "dialog": {
+      "value": "{zIndex.modal}",
+      "type": "number",
+      "description": "Dialogs and modals"
+    },
+    "notification": {
+      "value": "{zIndex.toast}",
+      "type": "number",
+      "description": "Notifications and toasts"
+    },
+    "tooltip": {
+      "value": "{zIndex.tooltip}",
+      "type": "number",
+      "description": "Tooltips (highest)"
+    }
+  },
+  "skeleton": {
+    "background": {
+      "value": "{neutral.200}",
+      "type": "color",
+      "description": "Skeleton base color"
+    },
+    "shimmer": {
+      "value": "{neutral.100}",
+      "type": "color",
+      "description": "Skeleton shimmer highlight"
+    },
+    "duration": {
+      "value": "1500ms",
+      "type": "duration",
+      "description": "Skeleton animation duration"
+    }
   }
 }
