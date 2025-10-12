@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { expect, userEvent, within } from '@storybook/test';
 
 const Checkbox = ({ label, checked: controlledChecked, onChange, disabled, indeterminate, error, ...props }) => {
   const [internalChecked, setInternalChecked] = useState(false);
@@ -200,5 +201,43 @@ export const CheckboxGroup = {
         </div>
       </div>
     );
+  },
+};
+
+/**
+ * Interaction Test - Tests checkbox toggling
+ */
+export const CheckboxTest = {
+  render: () => {
+    const [checked, setChecked] = useState(false);
+    return (
+      <Checkbox
+        label="Accept terms and conditions"
+        checked={checked}
+        onChange={(e) => setChecked(e.target.checked)}
+        data-testid="test-checkbox"
+      />
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    
+    // Find checkbox by label
+    const checkbox = canvas.getByLabelText('Accept terms and conditions');
+    
+    // Test: Should be unchecked initially
+    await expect(checkbox).not.toBeChecked();
+    
+    // Test: Click to check
+    await userEvent.click(checkbox);
+    await expect(checkbox).toBeChecked();
+    
+    // Test: Click to uncheck
+    await userEvent.click(checkbox);
+    await expect(checkbox).not.toBeChecked();
+    
+    // Test: Check again
+    await userEvent.click(checkbox);
+    await expect(checkbox).toBeChecked();
   },
 };

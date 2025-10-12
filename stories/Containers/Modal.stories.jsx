@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { expect, userEvent, within, waitFor } from '@storybook/test';
 
 const Modal = ({ isOpen, onClose, title, children, footer, size = 'md', closeOnBackdrop = true, closeOnEsc = true, ...props }) => {
   useEffect(() => {
@@ -369,5 +370,57 @@ export const DeleteConfirmation = {
         </Modal>
       </>
     );
+  },
+};
+
+/**
+ * Interaction Test - Tests modal open/close interactions
+ */
+export const ModalTest = {
+  render: () => {
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+      <>
+        <button
+          onClick={() => setIsOpen(true)}
+          data-testid="open-modal"
+          style={{ padding: '0.5rem 1rem', background: 'var(--color-blue-600)', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer' }}
+        >
+          Open Modal
+        </button>
+        <Modal
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          title="Test Modal"
+        >
+          <p>This is the modal content for testing.</p>
+        </Modal>
+      </>
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    
+    // Find open button
+    const openButton = canvas.getByTestId('open-modal');
+    
+    // Test: Modal should not be visible initially
+    expect(canvas.queryByText('Test Modal')).not.toBeInTheDocument();
+    
+    // Test: Click to open modal
+    await userEvent.click(openButton);
+    await waitFor(() => {
+      expect(canvas.getByText('Test Modal')).toBeInTheDocument();
+    });
+    
+    // Test: Modal content should be visible
+    await expect(canvas.getByText('This is the modal content for testing.')).toBeInTheDocument();
+    
+    // Test: Close modal by clicking close button
+    const closeButton = canvas.getByLabelText('Close modal');
+    await userEvent.click(closeButton);
+    await waitFor(() => {
+      expect(canvas.queryByText('Test Modal')).not.toBeInTheDocument();
+    });
   },
 };

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { expect, userEvent, within } from '@storybook/test';
 
 // Simple Button component for demo
 const Button = ({ children, variant = 'primary', size = 'md', disabled = false, ...props }) => {
@@ -125,5 +126,40 @@ export const WithAccessibleFocus = {
         story: 'Focus indicator meets WCAG 2.4.7 with 2px width and 2px offset.',
       },
     },
+  },
+};
+
+/**
+ * Interaction Test - Tests button clicks and state changes
+ */
+export const ClickTest = {
+  render: () => {
+    const [count, setCount] = useState(0);
+    return (
+      <div>
+        <Button onClick={() => setCount(count + 1)} data-testid="click-button">
+          Clicked {count} times
+        </Button>
+        <div style={{ marginTop: '1rem' }}>Count: {count}</div>
+      </div>
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    
+    // Find button
+    const button = canvas.getByTestId('click-button');
+    
+    // Test: Initial state
+    await expect(button).toHaveTextContent('Clicked 0 times');
+    
+    // Test: Single click
+    await userEvent.click(button);
+    await expect(button).toHaveTextContent('Clicked 1 times');
+    
+    // Test: Multiple clicks
+    await userEvent.click(button);
+    await userEvent.click(button);
+    await expect(button).toHaveTextContent('Clicked 3 times');
   },
 };

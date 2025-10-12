@@ -155,3 +155,43 @@ export const Number = {
     placeholder: '25',
   },
 };
+
+/**
+ * Interaction Test - Automated testing with play functions
+ * This test runs automatically in test-runner
+ */
+export const InteractiveTest = {
+  render: () => {
+    const [value, setValue] = useState('');
+    return (
+      <Input
+        label="Test Input"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        placeholder="Type here..."
+        data-testid="test-input"
+      />
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    
+    // Find the input element
+    const input = canvas.getByPlaceholderText('Type here...');
+    
+    // Test: Input should be empty initially
+    await expect(input).toHaveValue('');
+    
+    // Test: Type text into input
+    await userEvent.type(input, 'Hello World');
+    await expect(input).toHaveValue('Hello World');
+    
+    // Test: Clear input
+    await userEvent.clear(input);
+    await expect(input).toHaveValue('');
+    
+    // Test: Type and verify final value
+    await userEvent.type(input, 'Testing');
+    await expect(input).toHaveValue('Testing');
+  },
+};

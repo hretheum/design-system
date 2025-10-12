@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { expect, userEvent, within } from '@storybook/test';
 
 const Select = ({ label, options, placeholder, value, onChange, disabled, error, required, helpText, ...props }) => {
   return (
@@ -281,5 +282,45 @@ export const MultipleSelects = {
         )}
       </div>
     );
+  },
+};
+
+/**
+ * Interaction Test - Tests select dropdown interaction
+ */
+export const SelectTest = {
+  render: () => {
+    const [value, setValue] = useState('');
+    return (
+      <Select
+        label="Choose a fruit"
+        placeholder="Select..."
+        options={[
+          { label: 'Apple', value: 'apple' },
+          { label: 'Banana', value: 'banana' },
+          { label: 'Orange', value: 'orange' },
+        ]}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        data-testid="test-select"
+      />
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    
+    // Find select by label
+    const select = canvas.getByLabelText('Choose a fruit');
+    
+    // Test: Should have no value initially
+    await expect(select).toHaveValue('');
+    
+    // Test: Select an option
+    await userEvent.selectOptions(select, 'banana');
+    await expect(select).toHaveValue('banana');
+    
+    // Test: Change selection
+    await userEvent.selectOptions(select, 'orange');
+    await expect(select).toHaveValue('orange');
   },
 };
